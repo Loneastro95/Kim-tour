@@ -1,0 +1,181 @@
+[{
+    "id": 1,
+    "hotel_name": "Wallace",
+    "host_name": "AccumsanOdioCurabitur.xls",
+    "price": "Rial",
+    "image": "http://dummyimage.com/164x100.png/5fa2dd/ffffff",
+    "company_name": "Realmix",
+    "details": "tristique in tempus sit amet sem fusce consequat nulla nisl",
+    "location": "Room 697"
+  }, {
+    "id": 2,
+    "hotel_name": "Yulma",
+    "host_name": "Luctus.avi",
+    "price": "Yen",
+    "image": "http://dummyimage.com/152x100.png/5fa2dd/ffffff",
+    "company_name": "Rooxo",
+    "details": "nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate",
+    "location": "Apt 1191"
+  }, {
+    "id": 3,
+    "hotel_name": "Jehu",
+    "host_name": "TemporTurpis.jpeg",
+    "price": "Yuan Renminbi",
+    "image": "http://dummyimage.com/129x100.png/dddddd/000000",
+    "company_name": "Skipfire",
+    "details": "orci luctus et ultrices posuere cubilia curae duis faucibus accumsan odio curabitur convallis duis consequat dui nec nisi",
+    "location": "Apt 1397"
+  }, {
+    "id": 4,
+    "hotel_name": "Greggory",
+    "host_name": "MaurisMorbi.avi",
+    "price": "Rupee",
+    "image": "http://dummyimage.com/198x100.png/dddddd/000000",
+    "company_name": "Muxo",
+    "details": "lacinia aenean sit amet justo morbi ut odio cras mi",
+    "location": "PO Box 33427"
+  }, {
+    "id": 5,
+    "hotel_name": "Guinna",
+    "host_name": "SuscipitAFeugiat.xls",
+    "price": "Rupiah",
+    "image": "http://dummyimage.com/109x100.png/cc0000/ffffff",
+    "company_name": "Jabberstorm",
+    "details": "pede venenatis non sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi sem mauris laoreet ut",
+    "location": "Suite 57"
+  }, {
+    "id": 6,
+    "hotel_name": "Ludovika",
+    "host_name": "APedePosuere.mov",
+    "price": "Euro",
+    "image": "http://dummyimage.com/143x100.png/5fa2dd/ffffff",
+    "company_name": "Kwimbee",
+    "details": "rhoncus mauris enim leo rhoncus sed vestibulum sit amet cursus id turpis integer aliquet massa id lobortis convallis",
+    "location": "PO Box 35709"
+  }, {
+    "id": 7,
+    "hotel_name": "Petronella",
+    "host_name": "AmetEleifend.pdf",
+    "price": "Zloty",
+    "image": "http://dummyimage.com/176x100.png/ff4444/ffffff",
+    "company_name": "Voonte",
+    "details": "ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel",
+    "location": "Suite 10"
+  }, {
+    "id": 8,
+    "hotel_name": "Theresa",
+    "host_name": "AtDiamNam.xls",
+    "price": "Rupiah",
+    "image": "http://dummyimage.com/123x100.png/ff4444/ffffff",
+    "company_name": "Buzzster",
+    "details": "lobortis convallis tortor risus dapibus augue vel accumsan tellus nisi eu orci mauris lacinia",
+    "location": "Suite 65"
+  }, {
+    "id": 9,
+    "hotel_name": "Iolanthe",
+    "host_name": "Vel.avi",
+    "price": "Euro",
+    "image": "http://dummyimage.com/209x100.png/dddddd/000000",
+    "company_name": "Vimbo",
+    "details": "lectus pellentesque eget nunc donec quis orci eget orci vehicula condimentum curabitur in libero ut massa volutpat convallis morbi odio",
+    "location": "PO Box 27386"
+  }, {
+    "id": 10,
+    "hotel_name": "Corny",
+    "host_name": "Purus.ppt",
+    "price": "Naira",
+    "image": "http://dummyimage.com/173x100.png/ff4444/ffffff",
+    "company_name": "Dabjam",
+    "details": "ultrices posuere cubilia curae mauris viverra diam vitae quam suspendisse potenti nullam porttitor",
+    "location": "3rd Floor"
+  }, {
+    "id": 11,
+    "hotel_name": "Lorianne",
+    "host_name": "Orci.mpeg",
+    "price": "Rupiah",
+    "image": "http://dummyimage.com/184x100.png/ff4444/ffffff",
+    "company_name": "Shuffletag",
+    "details": "pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate luctus cum sociis natoque penatibus et",
+    "location": "Room 1760"
+  }, {
+    "id": 12,
+    "hotel_name": "Randy",
+    "host_name": "DuisFaucibusAccumsan.jpeg",
+    "price": "Euro",
+    "image": "http://dummyimage.com/117x100.png/dddddd/000000",
+    "company_name": "Jayo",
+    "details": "aliquet maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque",
+    "location": "Room 1548"
+  }, {
+    "id": 13,
+    "hotel_name": "Elinore",
+    "host_name": "Ridiculus.tiff",
+    "price": "Euro",
+    "image": "http://dummyimage.com/146x100.png/dddddd/000000",
+    "company_name": "Zoomlounge",
+    "details": "amet justo morbi ut odio cras mi pede malesuada in imperdiet et",
+    "location": "Apt 532"
+  }, {
+    "id": 14,
+    "hotel_name": "Tanitansy",
+    "host_name": "Donec.ppt",
+    "price": "Zloty",
+    "image": "http://dummyimage.com/117x100.png/dddddd/000000",
+    "company_name": "InnoZ",
+    "details": "convallis tortor risus dapibus augue vel accumsan tellus nisi eu orci mauris lacinia sapien quis",
+    "location": "Room 1800"
+  }, {
+    "id": 15,
+    "hotel_name": "Eddy",
+    "host_name": "DonecQuis.jpeg",
+    "price": "Lempira",
+    "image": "http://dummyimage.com/100x100.png/5fa2dd/ffffff",
+    "company_name": "Thoughtbridge",
+    "details": "consequat nulla nisl nunc nisl duis bibendum felis sed interdum venenatis turpis enim blandit mi in porttitor",
+    "location": "Room 301"
+  }, {
+    "id": 16,
+    "hotel_name": "Brockie",
+    "host_name": "AliquamLacus.mp3",
+    "price": "Krona",
+    "image": "http://dummyimage.com/111x100.png/5fa2dd/ffffff",
+    "company_name": "Pixonyx",
+    "details": "id sapien in sapien iaculis congue vivamus metus arcu adipiscing molestie hendrerit at",
+    "location": "20th Floor"
+  }, {
+    "id": 17,
+    "hotel_name": "Spike",
+    "host_name": "Suscipit.xls",
+    "price": "Euro",
+    "image": "http://dummyimage.com/169x100.png/dddddd/000000",
+    "company_name": "Meembee",
+    "details": "libero quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti",
+    "location": "Apt 125"
+  }, {
+    "id": 18,
+    "hotel_name": "Darill",
+    "host_name": "ANibh.gif",
+    "price": "Marka",
+    "image": "http://dummyimage.com/131x100.png/5fa2dd/ffffff",
+    "company_name": "Shufflester",
+    "details": "aenean auctor gravida sem praesent id massa id nisl venenatis",
+    "location": "9th Floor"
+  }, {
+    "id": 19,
+    "hotel_name": "Carlita",
+    "host_name": "Aliquet.ppt",
+    "price": "Real",
+    "image": "http://dummyimage.com/216x100.png/dddddd/000000",
+    "company_name": "Twinder",
+    "details": "eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla",
+    "location": "9th Floor"
+  }, {
+    "id": 20,
+    "hotel_name": "Gwenora",
+    "host_name": "TristiqueFusce.xls",
+    "price": "Ariary",
+    "image": "http://dummyimage.com/192x100.png/dddddd/000000",
+    "company_name": "Tagtune",
+    "details": "erat id mauris vulputate elementum nullam varius nulla facilisi cras",
+    "location": "13th Floor"
+  }]
