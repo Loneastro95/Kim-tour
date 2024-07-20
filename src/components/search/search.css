@@ -1,72 +1,97 @@
-.form-control-lg {
-    width: 600px;
-   
-  }
-  
-  .hero {
-    /* background-image: url(../../images/kimberly.jpg); */
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+.hero {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Align items horizontally */
+  flex-direction: column;
+  color: white;
+  text-align: left;
+  gap: 20px;
+}
 
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 20px;
-    color: white;
-    text-align: left;
-    flex-direction: column;
-    
-  
-  }
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  .message{
-    padding: 0 100px;
-  }
-  .line-one{
-   font-size: 32px;
-   font-weight: 700; 
-  }
-  .line-two{
-    font-size: 22px;
-    font-weight: 600; 
-   }
-  /* form{
-      position: absolute;
-      top: 40%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #898a94 40%;
-  } */
-  
-  .search-container {
-    aspect-ratio: 1/.08;
-    background-color: #0e0e0e;
-    opacity: 80%;
-    padding: 10px;
-    border-radius: 10px;
-    justify-self: flex-end;
-    align-self: center;
-    position: relative;
-    top: 70px;
-    /* position: fixed;
-    top: 35%;
-    gap: 10px; */
-  
-  }
-  
-  .checkin-out {
-    gap: 10px
-  }
-  
-  button {
-    border-radius: 2px;
-    padding: 0px 5px;
-  }
-  
-  .button-container {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-  }
+.message {
+  padding: 0 50px; /* Adjust padding as needed */
+  margin-bottom: 10px; /* Adjust margin as needed */
+  text-align: center; /* Center text */
+}
+
+.line-one {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 10px; /* Adjust margin as needed */
+}
+
+.line-two {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.search-container {
+  background-color: #0e0e0e;
+  opacity: 80%;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+  top: 0;
+  width: 100%; /* Ensure full width */
+  max-width: 1200px; /* Add a max-width if needed */
+}
+
+.search-form {
+  display: flex;
+  gap: 10px;
+  align-items: center; /* Align items vertically centered */
+  justify-content: center; /* Center items horizontally */
+  width: 100%;
+}
+
+.input-group,
+.datepicker-container,
+.dropdown {
+  flex: 1;
+}
+
+.datepicker-container {
+  display: flex;
+  gap: 10px;
+}
+
+.datepicker-item {
+  position: relative;
+  flex: 1;
+}
+
+.datepicker-input {
+  padding-left: 30px; /* Adjust padding to accommodate icon */
+}
+
+.datepicker-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #0e0e0e;
+  pointer-events: none;
+}
+
+.dropdown {
+  flex: 1;
+}
+
+.form-control {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-icon {
+  font-size: 18px;
+  color: white;
+}

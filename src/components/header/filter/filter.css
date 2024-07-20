@@ -1,0 +1,14 @@
+/* filters.css */
+button.active {
+    background-color: #007bff; /* Or any other color to highlight the active button */
+    color: white;
+    border-color: #007bff;
+  }
+  
+  /* Optional: Add hover and focus styles for better UX */
+  button:hover, button:focus {
+    background-color: #0056b3; /* Darker shade for hover/focus */
+    color: white;
+    border-color: #0056b3;
+  }
+  

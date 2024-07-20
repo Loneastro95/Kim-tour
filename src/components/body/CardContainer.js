@@ -10,100 +10,24 @@ import { Link } from "react-router-dom";
 function CardContainer() {
   return (
     <Container>
-      <Row>
-        <Col lg={3} md={4} sm={12} className="mb-4">
-          <Link to="/description">
-            <Card style={{ width: "18rem" }} className="mt-4">
-              <Card.Img variant="top" src={KimImg} />
-              <Card.Body className="cardBody">
-                <Card.Title>Location</Card.Title>
-                <Card.Text class="cardText">Hosted By</Card.Text>
-                <Card.Text class="cardText">Date</Card.Text>
-                <Card.Text class="cardText">
-                  <span>Price</span> night
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Link>
-        </Col>
-        <Col lg={3} md={4} sm={12} className="mb-4">
-          <Card style={{ width: "18rem" }} className="mt-4">
-            <Card.Img variant="top" src={KimImg} />
-            <Card.Body className="cardBody">
-              <Card.Title>Location</Card.Title>
-              <Card.Text class="cardText">Hosted By</Card.Text>
-              <Card.Text class="cardText">Date</Card.Text>
-              <Card.Text class="cardText">
-                <span>Price</span> night
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col lg={3} md={4} sm={12} className="mb-4">
-          <Card style={{ width: "18rem" }} className="mt-4">
-            <Card.Img variant="top" src={KimImg} />
-            <Card.Body className="cardBody">
-              <Card.Title>Location</Card.Title>
-              <Card.Text class="cardText">Hosted By</Card.Text>
-              <Card.Text class="cardText">Date</Card.Text>
-              <Card.Text class="cardText">
-                <span>Price</span> night
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col lg={3} md={4} sm={12} className="mb-4">
-          <Card style={{ width: "18rem" }} className="mt-4">
-            <Card.Img variant="top" src={KimImg} />
-            <Card.Body className="cardBody">
-              <Card.Title>Location</Card.Title>
-              <Card.Text class="cardText">Hosted By</Card.Text>
-              <Card.Text class="cardText">Date</Card.Text>
-              <Card.Text class="cardText">
-                <span>Price</span> night
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col lg={3} md={4} sm={12} className="mb-4">
-          <Card style={{ width: "18rem" }} className="mt-4">
-            <Card.Img variant="top" src={KimImg} />
-            <Card.Body className="cardBody">
-              <Card.Title>Location</Card.Title>
-              <Card.Text class="cardText">Hosted By</Card.Text>
-              <Card.Text class="cardText">Date</Card.Text>
-              <Card.Text class="cardText">
-                <span>Price</span> night
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col lg={3} md={4} sm={12} className="mb-4">
-          <Card style={{ width: "18rem" }} className="mt-4">
-            <Card.Img variant="top" src={KimImg} />
-            <Card.Body className="cardBody">
-              <Card.Title>Location</Card.Title>
-              <Card.Text class="cardText">Hosted By</Card.Text>
-              <Card.Text class="cardText">Date</Card.Text>
-              <Card.Text class="cardText">
-                <span>Price</span> night
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col lg={3} md={4} sm={12} className="mb-4">
-          <Card style={{ width: "18rem" }} className="mt-4">
-            <Card.Img variant="top" src={KimImg} />
-            <Card.Body className="cardBody">
-              <Card.Title>Location</Card.Title>
-              <Card.Text class="cardText">Hosted By</Card.Text>
-              <Card.Text class="cardText">Date</Card.Text>
-              <Card.Text class="cardText">
-                <span>Price</span> night
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
+      <Row xs={1} sm={2} md={3} lg={4} xl={4} className="g-4">
+        {[...Array(8)].map((_, index) => (
+          <Col key={index}>
+            <Link to="/description">
+              <Card className="card mt-4">
+                <Card.Img variant="top" src={KimImg} />
+                <Card.Body className="cardBody">
+                  <Card.Title>Location</Card.Title>
+                  <Card.Text className="cardText">Hosted By</Card.Text>
+                  <Card.Text className="cardText">Date</Card.Text>
+                  <Card.Text className="cardText">
+                    <span>Price</span> night
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Link>
+          </Col>
+        ))}
       </Row>
     </Container>
   );
