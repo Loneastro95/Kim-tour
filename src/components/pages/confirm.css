@@ -1,10 +1,16 @@
 .container {
     display: flex;
+    align-items: center;
     gap: 20px;
+    flex-wrap: wrap;
+}
+.top-header{
+   gap: 10px;
 }
 
 .left-container{
     width: 50%;
+    flex: 1;
 }
 
 .left-container{
@@ -13,10 +19,89 @@
 
 .right-container{
     width: 50%;
+    flex: 1;
+}
+
+.icon-arrow{
+    color: #000;
 }
 
 .icon-tick{
   width: 40px;
   height: 40px;
   border-radius: 50%;
+}
+
+.message-about-owner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    background-color: whitesmoke;
+    padding: 20px 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.message-text{
+
+}
+
+.trip-info{
+    width: 80%;
+}
+
+.date{
+    width: 100%;
+    justify-content: space-between;
+}
+
+.edit{
+    color: #000;
+
+}
+
+.underline{
+    border-bottom: 1px solid gray;
+    padding-bottom: 20px;
+}
+
+.info-card{
+    width: 90%;
+    background-color: whitesmoke;
+    padding: 20px 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+}
+
+.img-info{
+    border-bottom: 1px solid gray;
+    padding-bottom: 20px;
+    gap: 20px;
+}
+
+.img-place{
+    width: 30%;
+    aspect-ratio: 1/.8;
+    border-radius: 10px;
+}
+
+.price-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-info{
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.reserve-container{
+    width: 80%;
+    justify-content: center;
+}
+.reserve-btn{
+    align-self: center;
+    width: 60%;
 }
