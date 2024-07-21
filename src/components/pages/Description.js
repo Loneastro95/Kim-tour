@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import Navbar from "react-bootstrap/Navbar";
-import InputGroup from "react-bootstrap/InputGroup";
-import { Container, Col, Form, Dropdown, Row, Button } from "react-bootstrap";
+import { Container, Col, Form, Dropdown, Row, Button, InputGroup } from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import kimImg from "../../images/kimberly.jpg";
@@ -11,7 +9,7 @@ import user from "../../images/icons8-user-24.png";
 import desk from "../../images/icons8-swimming-pool-50.png";
 import metal from "../../images/icons8-achievement-48.png";
 import dive from "../../images/icons8-swimming-pool-50.png";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const Description = () => {
   const [checkInDate, setCheckInDate] = useState(null);
@@ -20,26 +18,10 @@ const Description = () => {
   const [children, setChildren] = useState(0);
   const [totalGuest, setTotalGuest] = useState(0);
 
-  const handleAdults = () => {
-    setAdults(adults + 1);
-  };
-
-  const handleAdultsSub = () => {
-    if (adults > 1) {
-      setAdults(adults - 1);
-    }
-  };
-
-  const handleChildren = () => {
-    setChildren(children + 1);
-  };
-
-  const handleChildrenSub = () => {
-    if (children > 0) {
-      setChildren(children - 1);
-    }
-  };
-
+  const handleAdults = () => setAdults(adults + 1);
+  const handleAdultsSub = () => adults > 1 && setAdults(adults - 1);
+  const handleChildren = () => setChildren(children + 1);
+  const handleChildrenSub = () => children > 0 && setChildren(children - 1);
   const handleDateChange = (dates) => {
     const [start, end] = dates;
     setCheckInDate(start);
@@ -49,236 +31,158 @@ const Description = () => {
   return (
     <div>
       <NavBar />
-      <Container>
+      <Container fluid className="mt-4">
         <h3>Sasi Bush Lodge Morning Luxury Safari Tent</h3>
-        <div className="imgContianer">
-          <img className="big" src={kimImg} />
-          <div className="smallContainer">
-            <div className="smallImg">
-              <img className="small" src={kimImg} />
-              <img className="small" src={kimImg} />
+        <Row className="imgContainer mb-4">
+          <Col md={8}>
+            <img className="img-fluid big" src={kimImg} alt="Big view" />
+          </Col>
+          <Col md={4} className="smallContainer d-flex flex-column justify-content-between">
+            <div className="smallImg d-flex">
+              <img className="img-fluid small" src={kimImg} alt="Small view 1" />
+              <img className="img-fluid small" src={kimImg} alt="Small view 2" />
             </div>
-            <div className="smallImg">
-              <img className="small" src={kimImg} />
-              <img className="small" src={kimImg} />
+            <div className="smallImg d-flex">
+              <img className="img-fluid small" src={kimImg} alt="Small view 3" />
+              <img className="img-fluid small" src={kimImg} alt="Small view 4" />
             </div>
-          </div>
-        </div>
-        <div className="Info-container">
-          <div className="details-container">
-            <h4 className="loction-detail">
-              Private room in tent in Bergville, Northern Drakensberg, South
-              Africa
-            </h4>
-            <p className="num-rooms">2 guests-1bedroom-1bed-1.5baths</p>
-            <div className="rating-container mb-4">
+          </Col>
+        </Row>
+        <Row className="Info-container">
+          <Col md={8} className="details-container">
+            <h4 className="location-detail">Private room in tent in Bergville, Northern Drakensberg, South Africa</h4>
+            <p className="num-rooms">2 guests - 1 bedroom - 1 bed - 1.5 baths</p>
+            <div className="rating-container mb-4 p-3 bg-light shadow-sm rounded">
               <div className="guest-fav">
-                <h1 className="fav">Guest</h1>
-                <h1 className="fav">favorite</h1>
+                <h5 className="fav">Guest favorite</h5>
               </div>
-              <div className="guest-view">
-                <p className="guest-view-text">
-                  One of the most loved homes on Airbnb, according to guest
-                </p>
-                <div className="rating">
-                  <p>5.0</p>
-                  <p>*****</p>
+              <div className="guest-view d-flex flex-column justify-content-center align-items-center">
+                <p className="guest-view-text">One of the most loved homes on Airbnb, according to guest</p>
+                <div className="rating d-flex align-items-center">
+                  <p className="mb-0 mr-2">5.0</p>
+                  <p className="mb-0">★★★★★</p>
                 </div>
               </div>
-              <div className="review">
-                <p>13</p>
-                <p>reviews</p>
+              <div className="review text-center">
+                <p className="mb-0">13</p>
+                <p className="mb-0">reviews</p>
               </div>
             </div>
-
-            <div className="more-info-container mb-4">
-              <img className="icons" src={user} />
+            <div className="more-info-container mb-4 d-flex align-items-center">
+              <img className="icons mr-3" src={user} alt="User" />
               <div className="more-text">
-                <p className="guest-view-text">Hosted by Pippa</p>
-                <p className="">Superhost3-years hosting</p>
+                <p className="guest-view-text mb-0">Hosted by Pippa</p>
+                <p className="mb-0">Superhost · 3 years hosting</p>
               </div>
             </div>
-
-            <div className="more-info-container2">
-              <img className="iconsml" src={desk} />
+            <div className="more-info-container2 mb-4 d-flex align-items-center">
+              <img className="iconsml mr-3" src={desk} alt="Desk" />
               <div className="more-text">
-                <p className="guest-view-text">Dedicated workspace</p>
-                <p className="">
-                  A room with wifi that’s well-suited for working.
-                </p>
+                <p className="guest-view-text mb-0">Dedicated workspace</p>
+                <p className="mb-0">A room with wifi that’s well-suited for working.</p>
               </div>
             </div>
-
-            <div className="more-info-container2">
-              <img className="iconsml" src={metal} />
+            <div className="more-info-container2 mb-4 d-flex align-items-center">
+              <img className="iconsml mr-3" src={metal} alt="Metal" />
               <div className="more-text">
-                <p className="guest-view-text">Pippa is a Superhost</p>
-                <p className="">
-                  Superhosts are experienced, highly rated Hosts.
-                </p>
+                <p className="guest-view-text mb-0">Pippa is a Superhost</p>
+                <p className="mb-0">Superhosts are experienced, highly rated Hosts.</p>
               </div>
             </div>
-
-            <div className="more-info-container2 line mb-5">
-              <img className="iconsml" src={user} />
+            <div className="more-info-container2 mb-5 d-flex align-items-center">
+              <img className="iconsml mr-3" src={user} alt="User" />
               <div className="more-text">
-                <p className="guest-view-text">Dive right in</p>
-                <p className="">
-                  This is one of the few places in the area with a pool.
-                </p>
+                <p className="guest-view-text mb-0">Dive right in</p>
+                <p className="mb-0">This is one of the few places in the area with a pool.</p>
               </div>
             </div>
-
             <div className="description-text-container mb-5">
               <p>Some info has been automatically translated. Show original</p>
-              <p className="decription-text">
-                Ukusa Luxury Couple Tent offers expansive views over-looking the
-                Drakensberg Mountains. This rate includes accommodation in a
-                king-sized bed, breakfast, dinner and a guided walk with
-                wildlife sightings. Excluded in this rate are drinks and
-                additional activities such as a game drive or full body massage!
+              <p className="description-text">
+                Ukusa Luxury Couple Tent offers expansive views overlooking the Drakensberg Mountains. This rate includes accommodation in a king-sized bed, breakfast, dinner, and a guided walk with wildlife sightings. Excluded in this rate are drinks and additional activities such as a game drive or full body massage!
               </p>
-              <p>
-                A kitchenette, open-air bath, rain shower and private toilet add
-                to your comfort; while...
-              </p>
-
+              <p>A kitchenette, open-air bath, rain shower, and private toilet add to your comfort; while...</p>
             </div>
-
-            {/* <div className="where-sleep-container mb-5">
-              <h4 className="loction-detail mb-2">Where you’ll sleep</h4>
-              <div className="sleep-container">
-                <img className="icon-sleep" src={desk}/>
-                <h6 className="location-detail">Bedroom</h6>
-                <p>1 king bed</p>
-              </div>
-            </div> */}
-
             <div className="offers-container mb-5">
-            <h4 className="loction-detail mb-4">What this place offers</h4>
-            <div className="offers-icons-container d-flex flex-wrap justify-content-between">
-              <Row>
-                <Col lg={6} xs={12}>
-                  <div className="d-flex mb-3">
-                   <img className="o-icons" src={desk}/>
-                    <p>Mountain view</p>
-                  </div>
+              <h4 className="location-detail mb-4">What this place offers</h4>
+              <Row className="offers-icons-container d-flex flex-wrap">
+                <Col lg={6} xs={12} className="mb-3 d-flex align-items-center">
+                  <img className="o-icons mr-2" src={desk} alt="Mountain view" />
+                  <p className="mb-0">Mountain view</p>
                 </Col>
-                <Col lg={6} xs={12}>
-                  <div className="d-flex mb-3">
-                   <img className="o-icons" src={desk}/>
-                    <p>Lake access</p>
-                  </div>
+                <Col lg={6} xs={12} className="mb-3 d-flex align-items-center">
+                  <img className="o-icons mr-2" src={desk} alt="Lake access" />
+                  <p className="mb-0">Lake access</p>
                 </Col>
-                <Col lg={6}>
-                  <div className="d-flex mb-3" xs={12}>
-                   <img className="o-icons" src={desk}/>
-                    <p>Kitchen</p>
-                  </div>
+                <Col lg={6} xs={12} className="mb-3 d-flex align-items-center">
+                  <img className="o-icons mr-2" src={desk} alt="Kitchen" />
+                  <p className="mb-0">Kitchen</p>
                 </Col>
-                <Col lg={6} xs={12}>
-                  <div className="d-flex mb-3">
-                   <img className="o-icons" src={desk}/>
-                    <p>Wifi</p>
-                  </div>
+                <Col lg={6} xs={12} className="mb-3 d-flex align-items-center">
+                  <img className="o-icons mr-2" src={desk} alt="Wifi" />
+                  <p className="mb-0">Wifi</p>
                 </Col>
-                <Col lg={6}>
-                  <div className="d-flex mb-3">
-                   <img className="o-icons" src={desk}/>
-                    <p>Dedicated workspace</p>
-                  </div>
+                <Col lg={6} xs={12} className="mb-3 d-flex align-items-center">
+                  <img className="o-icons mr-2" src={desk} alt="Dedicated workspace" />
+                  <p className="mb-0">Dedicated workspace</p>
                 </Col>
-                <Col lg={6}>
-                  <div className="d-flex mb-3">
-                   <img className="o-icons" src={desk}/>
-                    <p>Free parking on premises</p>
-                  </div>
+                <Col lg={6} xs={12} className="mb-3 d-flex align-items-center">
+                  <img className="o-icons mr-2" src={desk} alt="Free parking on premises" />
+                  <p className="mb-0">Free parking on premises</p>
                 </Col>
-                <Col lg={6}>
-                <Button className="showbtn" variant="outline-dark">
-                    Show more 
-                  </Button>
+                <Col xs={12}>
+                  <Button className="showbtn" variant="outline-dark">Show more</Button>
                 </Col>
-              </Row>     
+              </Row>
             </div>
+          </Col>
+          <Col md={4}>
+            <div className="checkout-container mb-6 p-3 bg-light shadow-sm rounded">
+              <h4 className="date-for-price">R3,450 ZAR night</h4>
+              <Form>
+                <InputGroup className="checkin-out mb-3">
+                  <DatePicker
+                    selected={checkInDate}
+                    onChange={handleDateChange}
+                    startDate={checkInDate}
+                    endDate={checkOutDate}
+                    selectsRange
+                    className="form-control"
+                    placeholderText="Check-In - Check-Out"
+                    dateFormat="yyyy-MM-dd"
+                    minDate={new Date()}
+                  />
+                </InputGroup>
+                <Dropdown className="guest-dropdown mb-3">
+                  <Dropdown.Toggle variant="outline-dark" id="dropdown-basic">
+                    {totalGuest ? `${totalGuest} Guest${totalGuest > 1 ? 's' : ''}` : 'Select Guests'}
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <Form.Group className="dropdown-item d-flex justify-content-between align-items-center">
+                      <Form.Label className="mb-0">Adults</Form.Label>
+                      <div className="guest-count d-flex align-items-center">
+                        <Button className="guest-count-btn" variant="outline-dark" onClick={handleAdultsSub}>-</Button>
+                        <span className="guest-count-value mx-2">{adults}</span>
+                        <Button className="guest-count-btn" variant="outline-dark" onClick={handleAdults}>+</Button>
+                      </div>
+                    </Form.Group>
+                    <Form.Group className="dropdown-item d-flex justify-content-between align-items-center">
+                      <Form.Label className="mb-0">Children</Form.Label>
+                      <div className="guest-count d-flex align-items-center">
+                        <Button className="guest-count-btn" variant="outline-dark" onClick={handleChildrenSub}>-</Button>
+                        <span className="guest-count-value mx-2">{children}</span>
+                        <Button className="guest-count-btn" variant="outline-dark" onClick={handleChildren}>+</Button>
+                      </div>
+                    </Form.Group>
+                  </Dropdown.Menu>
+                </Dropdown>
+                <Link to="/checkout">
+                  <Button className="showbtn" variant="outline-dark">Reserve</Button>
+                </Link>
+              </Form>
             </div>
-          </div>
-          <Row>
-            <Container className="checkout-container mb-6">
-              <div class="fixed-position">
-                <div className="checkout-box">
-                  <h4 className="date-for-price">R3,450 ZAR night</h4>
-                  <Form inline>
-                    <InputGroup className="checkin-out">
-                      <Col xs="12">
-                        <div className="inner-addon right-addon">
-                          <DatePicker
-                            selected={checkInDate}
-                            onChange={handleDateChange}
-                            startDate={checkInDate}
-                            endDate={checkOutDate}
-                            selectsRange
-                            className="form-control"
-                            placeholderText="Check-In - Check-Out"
-                            dateFormat="yyyy-MM-dd"
-                            minDate={new Date()}
-                          />
-                        </div>
-                      </Col>
-                    </InputGroup>
-                  </Form>
-                  <Dropdown>
-                    <Dropdown.Toggle
-                      className="guest"
-                      variant="primary"
-                      id="dropdown-basic"
-                    >
-                      GUESTS
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                      <div className="d-flex pl-5 pr-5 num-people">
-                        <div>
-                          <p className="font-weight-bold">Adults</p>
-                          <p>Adult 13+</p>
-                        </div>
-                        <div className="button-container">
-                          <button onClick={handleAdultsSub}>-</button>
-                          <span className="px-2">{adults}</span>
-                          <button onClick={handleAdults}>+</button>
-                        </div>
-                      </div>
-                      <div className="d-flex pl-5 pr-5  num-people">
-                        <div>
-                          <p className="font-weight-bold">Children</p>
-                          <p>Children 2-12</p>
-                        </div>
-                        <div className="button-container">
-                          <button onClick={handleChildrenSub}>-</button>
-                          <span className="px-2">{children}</span>
-                          <button onClick={handleChildren}>+</button>
-                        </div>
-                      </div>
-                    </Dropdown.Menu>
-                  </Dropdown>
-                  <Col xs="12">
-                    <Button className="bookbtn" variant="outline-primary">
-                     <Link to="/confirm">Book Now!</Link> 
-                    </Button>
-                  </Col>
-                  <p className="not-charge">You won't be charged yet</p>
-                  <div className="multiply-price-night">
-                    <p className="price-night">R3,450 ZARx5 nights</p>
-                    <p className="total">R17,250 ZAR</p>
-                  </div>
-                  <div className="total-div">
-                    <p className="total-text">TOTAL</p>
-                    <p className="total-text">R17,250 ZAR</p>
-                  </div>
-                </div>
-              </div>
-            </Container>
-          </Row>
-        </div>
+          </Col>
+        </Row>
       </Container>
     </div>
   );
