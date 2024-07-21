@@ -11,6 +11,7 @@ import user from "../../images/icons8-user-24.png";
 import desk from "../../images/icons8-swimming-pool-50.png";
 import metal from "../../images/icons8-achievement-48.png";
 import dive from "../../images/icons8-swimming-pool-50.png";
+import { Link } from 'react-router-dom'
 
 const Description = () => {
   const [checkInDate, setCheckInDate] = useState(null);
@@ -49,7 +50,7 @@ const Description = () => {
     <div>
       <NavBar />
       <Container>
-        <h1>Sasi Bush Lodge Morning Luxury Safari Tent</h1>
+        <h3>Sasi Bush Lodge Morning Luxury Safari Tent</h3>
         <div className="imgContianer">
           <img className="big" src={kimImg} />
           <div className="smallContainer">
@@ -203,76 +204,76 @@ const Description = () => {
             </div>
           </div>
           <Row>
-            <Container className="checkout-container">
-              <div className="checkout-box">
-                <h4 className="date-for-price">R3,450 ZAR night</h4>
-                <Form inline>
-                  <InputGroup className="checkin-out">
-                    <Col xs="12">
-                      <div className="inner-addon right-addon">
-                        <DatePicker
-                          selected={checkInDate}
-                          onChange={handleDateChange}
-                          startDate={checkInDate}
-                          endDate={checkOutDate}
-                          selectsRange
-                          className="form-control"
-                          placeholderText="Check-In - Check-Out"
-                          dateFormat="yyyy-MM-dd"
-                          minDate={new Date()}
-                        />
+            <Container className="checkout-container mb-6">
+              <div class="fixed-position">
+                <div className="checkout-box">
+                  <h4 className="date-for-price">R3,450 ZAR night</h4>
+                  <Form inline>
+                    <InputGroup className="checkin-out">
+                      <Col xs="12">
+                        <div className="inner-addon right-addon">
+                          <DatePicker
+                            selected={checkInDate}
+                            onChange={handleDateChange}
+                            startDate={checkInDate}
+                            endDate={checkOutDate}
+                            selectsRange
+                            className="form-control"
+                            placeholderText="Check-In - Check-Out"
+                            dateFormat="yyyy-MM-dd"
+                            minDate={new Date()}
+                          />
+                        </div>
+                      </Col>
+                    </InputGroup>
+                  </Form>
+                  <Dropdown>
+                    <Dropdown.Toggle
+                      className="guest"
+                      variant="primary"
+                      id="dropdown-basic"
+                    >
+                      GUESTS
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <div className="d-flex pl-5 pr-5 num-people">
+                        <div>
+                          <p className="font-weight-bold">Adults</p>
+                          <p>Adult 13+</p>
+                        </div>
+                        <div className="button-container">
+                          <button onClick={handleAdultsSub}>-</button>
+                          <span className="px-2">{adults}</span>
+                          <button onClick={handleAdults}>+</button>
+                        </div>
                       </div>
-                    </Col>
-                  </InputGroup>
-                </Form>
-                <Dropdown>
-                  <Dropdown.Toggle
-                    className="guest"
-                    variant="primary"
-                    id="dropdown-basic"
-                  >
-                    GUESTS
-                  </Dropdown.Toggle>
-
-                  <Dropdown.Menu>
-                    <div className="d-flex pl-5 pr-5 num-people">
-                      <div>
-                        <p className="font-weight-bold">Adults</p>
-                        <p>Adult 13+</p>
+                      <div className="d-flex pl-5 pr-5  num-people">
+                        <div>
+                          <p className="font-weight-bold">Children</p>
+                          <p>Children 2-12</p>
+                        </div>
+                        <div className="button-container">
+                          <button onClick={handleChildrenSub}>-</button>
+                          <span className="px-2">{children}</span>
+                          <button onClick={handleChildren}>+</button>
+                        </div>
                       </div>
-                      <div className="button-container">
-                        <button onClick={handleAdultsSub}>-</button>
-                        <span className="px-2">{adults}</span>
-                        <button onClick={handleAdults}>+</button>
-                      </div>
-                    </div>
-                    <div className="d-flex pl-5 pr-5  num-people">
-                      <div>
-                        <p className="font-weight-bold">Children</p>
-                        <p>Children 2-12</p>
-                      </div>
-                      <div className="button-container">
-                        <button onClick={handleChildrenSub}>-</button>
-                        <span className="px-2">{children}</span>
-                        <button onClick={handleChildren}>+</button>
-                      </div>
-                    </div>
-                  </Dropdown.Menu>
-                </Dropdown>
-                <Col xs="12">
-                  <Button className="bookbtn" variant="outline-primary">
-                    Book Now!
-                  </Button>
-                </Col>
-                <p className="not-charge">You won't be charged yet</p>
-                <div className="multiply-price-night">
-                  <p className="price-night">R3,450 ZARx5 nights</p>
-                  <p className="total">R17,250 ZAR</p>
-                </div>
-
-                <div className="total-div">
-                  <p className="total-text">TOTAL</p>
-                  <p className="total-text">R17,250 ZAR</p>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                  <Col xs="12">
+                    <Button className="bookbtn" variant="outline-primary">
+                     <Link to="/confirm">Book Now!</Link> 
+                    </Button>
+                  </Col>
+                  <p className="not-charge">You won't be charged yet</p>
+                  <div className="multiply-price-night">
+                    <p className="price-night">R3,450 ZARx5 nights</p>
+                    <p className="total">R17,250 ZAR</p>
+                  </div>
+                  <div className="total-div">
+                    <p className="total-text">TOTAL</p>
+                    <p className="total-text">R17,250 ZAR</p>
+                  </div>
                 </div>
               </div>
             </Container>

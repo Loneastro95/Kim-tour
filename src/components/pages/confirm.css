@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+.left-container{
+    width: 50%;
+}
+
+.left-container{
+    width: 50%;
+}
+
+.right-container{
+    width: 50%;
+}
+
+.icon-tick{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
