@@ -1,218 +1,138 @@
-.imgContianer{
+/* Add this CSS to center the content */
+.center-wrapper {
     display: flex;
-    gap: 10px;
-    padding-top: 10px;
-    margin-bottom: 20px;
-}
-
-.big{
-    width: 45%;
-    aspect-ratio: 1/.6;
-}
-
-.smallImg{
-    display: flex;
-    gap: 10px;
-}
-
-.small{
-    width: 45%;
-    aspect-ratio: 1/.85;
-}
-.smallContainer{
-    width: 45%;
-
-    display: flex;
-    flex-direction: column; 
-    gap: 50px;
-}
-
-/* details about place */
-
-.Info-container{
-    display: flex;
-    gap: 20px;
-}
-.details-container{
-    width: 54%;
-    
-
-}
-.loction-detail{
-    font-weight: bold;
-}
-
-.num-rooms{
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.rating-container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    background-color: whitesmoke;
-    padding: 20px 10px;
-    gap: 5px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    
-}
-.fav{
-    font-size: 1.13rem;
-    font-weight: bold;
-}
-
-.guest-view{
-    display: flex;
-    border-right: 1px gray solid;
-    padding: 0 20px;
-}
-.guest-view-text{
-    font-size: 1.1rem;
-    font-weight: bold;
-    line-height: normal;
-}
-
-.rating{
-    text-align: center;
-}
-
-.rating> p{
-    font-weight: bold;
-}
-
-.review{
-    text-align: center;
-    line-height: normal;  
-}
-
-.review:first-child{
-    font-weight: bold;
-}
-.review:last-child{
-    text-decoration: underline;
-}
-
-.more-info-container{
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    border-bottom: 1px solid gray;
-    
-}
-
-.more-info-container2{
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    
-}
-.line{
-    border-bottom: 1px solid gray; 
-}
-.more-text{
-    text-align: left;
-}
-.icons{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-}
-.iconsml{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%; 
-}
-
-.description-text-container{
-    border-bottom: 1px solid gray;
-}
-.where-sleep-container{
-    border-bottom: 1px solid gray;
-    padding-bottom: 50px;
-}
-
-.sleep-container{
-    background-color: whitesmoke;
-    padding: 20px;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 100vh; /* Full viewport height */
+  }
+  
+  .container-fluid {
+    max-width: 1200px; /* Adjust as needed */
+    padding: 0 15px; /* Add some padding for better spacing */
+  }
+  
+  .big {
+    height: 400px;
+    object-fit: cover;
+  }
+  
+  .smallContainer {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    border-radius: 10px;
-    width: 35%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.offers-container{
-    border-bottom: 1px solid gray;
-    padding-bottom: 40px;
-}
-
-/* check-out */
-
-.checkout-box{
-    width: 100%;
-    padding: 20px 20px;
-    border-radius: 10px;
-    background-color: whitesmoke;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    
-}
-
-.num-people{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  padding: 10px 10px;
+    justify-content: space-between;
+  }
   
-}
-
-
-
-.button-container> button{
-    padding: 5px 8px;
-    border-radius: 2px;
-}
-
-.bookbtn, .guest{
-    width: 100%;
-    margin-bottom: 10px;
-    margin-top: 10px;
-}
-
-.bookbtn{
-    margin-top: 0;
-}
-.not-charge{
-    text-align: center;
-}
-
-.multiply-price-night{
+  .smallImg {
     display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    border-bottom: 1px gray solid;
-}
-
-.price-night{
-    text-decoration: underline;
-}
-
-.total-div{
+    gap: 5px;
+  }
+  
+  .small {
+    flex: 1;
+    height: 195px;
+    object-fit: cover;
+  }
+  
+  .imgContainer {
+    margin-top: 20px;
+  }
+  
+  .Info-container {
+    margin-top: 20px;
+  }
+  
+  .details-container .rating-container {
+    margin-bottom: 20px;
+  }
+  
+  .more-info-container,
+  .more-info-container2 {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 10px;
-    
-
-}
-
-.total-text{
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin-bottom: 0;
-  align-self: flex-end;
-}
+    margin-bottom: 20px;
+  }
+  
+  .icons,
+  .iconsml {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+  }
+  
+  .description-text-container {
+    margin-bottom: 20px;
+  }
+  
+  .offers-container .offers-icons-container {
+    margin-top: 20px;
+  }
+  
+  .offers-icons-container .o-icons {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+  }
+  
+  .date-for-price {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .checkin-out {
+    margin-bottom: 20px;
+  }
+  
+  .guest-dropdown .guest-count {
+    display: flex;
+    align-items: center;
+  }
+  
+  .guest-count .guest-count-btn {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .guest-count .guest-count-value {
+    font-size: 16px;
+  }
+  
+  .showbtn {
+    width: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    .big {
+      height: 300px;
+    }
+  
+    .small {
+      height: 140px;
+    }
+  
+    .imgContainer {
+      margin-top: 15px;
+    }
+  
+    .Info-container {
+      margin-top: 15px;
+    }
+  
+    .details-container .rating-container {
+      margin-bottom: 15px;
+    }
+  
+    .more-info-container,
+    .more-info-container2 {
+      margin-bottom: 15px;
+    }
+  
+    .description-text-container {
+      margin-bottom: 15px;
+    }
+  
+    .offers-container .offers-icons-container {
+      margin-top: 15px;
+    }
+  }
+  
