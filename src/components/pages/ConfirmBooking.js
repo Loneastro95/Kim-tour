@@ -17,7 +17,7 @@ const ConfirmBooking = () => {
             <Button className="bg-light">
               <FontAwesomeIcon className="icon-arrow" icon={faArrowLeft} />
             </Button>
-            <h3>Confirm and pay</h3>
+            <h3 className="confirm-text mt-4">Confirm your details</h3>
           </div>
           <div className="message-about-owner mb-5">
             <div>

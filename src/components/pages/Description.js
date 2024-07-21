@@ -176,7 +176,7 @@ const Description = () => {
                     </Form.Group>
                   </Dropdown.Menu>
                 </Dropdown>
-                <Link to="/checkout">
+                <Link to="/confirm">
                   <Button className="showbtn" variant="outline-dark">Reserve</Button>
                 </Link>
               </Form>
