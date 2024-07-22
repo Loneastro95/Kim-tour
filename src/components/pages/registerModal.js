@@ -5,52 +5,57 @@ import { faUser, faInfoCircle, faSignInAlt, faUserPlus, faEnvelope } from '@fort
 import kimImg from '../../../images/kimberly.jpg';
 import './Navcontainer.css'; // Ensure you have this CSS file
 import axios from 'axios';
+import { Link, useNavigate } from "react-router-dom";
 
 const Navcontainer = () => {
+  const navigate =  useNavigate();
   const [showModal, setShowModal] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
   const [showForgotPassword, setShowForgotPassword] = useState(false);
   const [userType, setUserType] = useState('');
-  const [user, setUser] = useState({
-    email : "",
-    password : "",
-    confirmPassword: "",
-    userName: "",
-    successMessage: null
+//   const [user, setUser] = useState({
+//     email : "",
+//     password : "",
+//     confirmPassword: "",
+//     userName: "",
+//     successMessage: null
 
-  });
-  const handleChange = (e) => {
-    const {id , value} = e.target   
-    setUser(prevUser => ({
-        ...prevUser,
-        [id] : value
-    }))
-}
+//   });
+//   const handleChange = (e) => {
+//     const {id , value} = e.target   
+//     setUser(prevUser => ({
+//         ...prevUser,
+//         [id] : value
+//     }))
+// }
 
-const handleUserServe = (e) =>{
-  e.preventDefault();
+// const handleUserServe = (e) =>{
+//   e.preventDefault();
 
-  console.log("Email: ", user.email);
-    console.log("Password: ", user.password)
+//   console.log("Email: ", user.email);
+//     console.log("Password: ", user.password)
 
-  axios.post("https://kim-tour-1.onrender.com/api/login", {
-    emailAddress:"Kgaotlhaelwe@gmail.com",
-    password:"123456789",
-  })
-             .then(function (response) {
-              if(response.status === 200){
-                setUser(prevUser => ({
-                  ...prevUser,
-                  "successMessage": "Login Successful"
-                }))
-              }
-             })
-             .catch(function (error){
-              console.log(error);
-              alert(error)
-             });
+//   axios.post("https://kim-tour-1.onrender.com/api/login", {
+//     emailAddress:"Kgaotlhaelwe@gmail.com",
+//     password:"123456789",
+//   })
+//              .then(function (response) {
+//               if(response.status === 200){
+//                 setUser(prevUser => ({
+//                   ...prevUser,
+//                   "successMessage": "Login Successful"
+//                 }))
 
-}
+//               }
+              
+//               navigate('/confirm');
+//              })
+//              .catch(function (error){
+//               console.log(error);
+//               alert(error)
+//              });
+
+// }
 
   const handleShow = () => setShowModal(true);
   const handleClose = () => setShowModal(false);
@@ -115,18 +120,18 @@ const handleUserServe = (e) =>{
             <p>Register or log in to access the best tours, events, and accommodations.</p>
           </div>
           {isLogin ? (
-            <Form>
+            <Form >
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" value={user.email} onChange={handleChange}/>
+                <Form.Control type="email" placeholder="Enter email" />
               </Form.Group>
 
               <Form.Group controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" value={user.password} onChange={handleChange}/>
+                <Form.Control type="password" placeholder="Password"/>
               </Form.Group>
 
-              <Button variant="primary" type="submit" className="w-100 mt-3" onClick={handleUserServe}>
+              <Button variant="primary" type="submit" className="w-100 mt-3">
                 Login
               </Button>
 
@@ -134,6 +139,7 @@ const handleUserServe = (e) =>{
                 <Button variant="link" onClick={() => setIsLogin(false)}>Register</Button>
                 <Button variant="link" className="ms-3" onClick={handleForgotPassword}>Forgot Password?</Button>
               </div>
+              
             </Form>
           ) : (
             <>

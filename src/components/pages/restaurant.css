@@ -1,0 +1,73 @@
+.rest-name{
+    text-align: center;
+}
+.user-img{
+    align-self: flex-start;
+    margin-bottom: 5px;
+}
+
+  
+.date-for-price {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .checkin-out {
+    margin-bottom: 20px;
+  }
+  
+  .guest-dropdown .guest-count {
+    display: flex;
+    align-items: center;
+  }
+  
+  .guest-count .guest-count-btn {
+    width: 30px;
+    height: 30px;
+    
+  }
+  
+  .guest-count .guest-count-value {
+    font-size: 16px;
+  }
+  
+  .showbtn {
+    width: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    .big {
+      height: 300px;
+    }
+  
+    .small {
+      height: 140px;
+    }
+  
+    .imgContainer {
+      margin-top: 15px;
+    }
+  
+    .Info-container {
+      margin-top: 15px;
+    }
+  
+    .details-container .rating-container {
+      margin-bottom: 15px;
+    }
+  
+    .more-info-container,
+    .more-info-container2 {
+      margin-bottom: 15px;
+    }
+  
+    .description-text-container {
+      margin-bottom: 15px;
+    }
+  
+    .offers-container .offers-icons-container {
+      margin-top: 15px;
+    }
+  }
+  

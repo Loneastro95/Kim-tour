@@ -13,7 +13,7 @@ function CardContainer() {
       <Row xs={1} sm={2} md={3} lg={4} xl={4} className="g-4">
         {[...Array(8)].map((_, index) => (
           <Col key={index}>
-            <Link to="/description">
+            <Link to="/description" style={{ textDecoration: 'none', color: 'inherit' }}>
               <Card className="card mt-4">
                 <Card.Img variant="top" src={KimImg} />
                 <Card.Body className="cardBody">
