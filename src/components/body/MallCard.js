@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Header from "../header/header";
 import {
   Container,
@@ -10,36 +10,69 @@ import {
   Button,
   InputGroup,
 } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import KimImg from "../../images/mall.jpg";
 import "./restaurantCard.css";
+import axios from "axios";
+import Footer from "../footer/footer";
 
 const MallCard = () => {
+
+  const navigate = useNavigate();
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    axios.get("http://localhost:3000/api/fetchData")
+      .then(response => {
+        console.log(response.data.malls)
+        setData(response.data.malls
+        );
+        setLoading(false);
+      })
+      .catch(error => {
+        setError(error);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
+  const handleCardClick = ((item)=>{
+    console.log(data)
+    navigate(`/malls`, { state: { item } });
+  })
+
   return (
     <div>
     <Header />
     <Container>
       <Row xs={1} sm={2} md={3} lg={4} xl={4} className="g-4">
-        {[...Array(8)].map((_, index) => (
+        {data.map((item ,index) => (
           <Col key={index}>
-            <Link
-              to="/malls"
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
-              <Card className="card mt-4">
-                <Card.Img variant="top" src={KimImg} />
+            
+              <Card className="card mt-4" onClick={()=>handleCardClick(item)} >
+                <Card.Img variant="top" src={ KimImg} />
                 <Card.Body className="cardBody">
-                  <Card.Title>Northern Cape Mall</Card.Title>
+                  <Card.Title>{item.name}</Card.Title>
                   <Card.Text className="cardText">
-                     Memorial Rd, Royldene, Kimberley, 8301
+                     {item.location}
                   </Card.Text>
                 </Card.Body>
               </Card>
-            </Link>
+            
           </Col>
         ))}
       </Row>
     </Container>
+    <Footer/>
   </div>
   )
 }

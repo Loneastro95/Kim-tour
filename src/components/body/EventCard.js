@@ -13,6 +13,7 @@ import {
 import { Link } from "react-router-dom";
 import KimImg from "../../images/Party.jpg";
 import './eventCard.css';
+import Footer from "../footer/footer";
 
 
 
@@ -46,6 +47,7 @@ const EventCard = () => {
             ))}
           </Row>
         </Container>
+        <Footer/>
     </div>
   )
 }

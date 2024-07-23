@@ -11,7 +11,7 @@ import {
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import kimImg from "../../images/restaurant.avif";
-import { Link } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./restaurant.css";
 import NavBar from "../header/top-header/navbar";
 import user from "../../images/icons8-user-24.png";
@@ -33,6 +33,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const Restaurant = () => {
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { item } = location.state || {}; // Retrieve the item from state
+
   const [checkInDate, setCheckInDate] = useState(null);
   const [checkOutDate, setCheckOutDate] = useState(null);
   const [adults, setAdults] = useState(1);
@@ -51,19 +56,19 @@ const Restaurant = () => {
     <div>
       <NavBar />
       <Container>
-        <h3>Experience the vibrant flavors of Korea</h3>
+        <h3 className="w-100">{item.name}</h3>
         <Row className="imgContainer mb-4">
           <Col md={8}>
-            <img className="img-fluid big" src={kimImg} alt="Big view" />
+            <img className="img-fluid big" src={item.gallery[0]} alt="Big view" />
           </Col>
           <Col md={4} className="smallContainer d-flex flex-column justify-content-between">
             <div className="smallImg d-flex">
-              <img className="img-fluid small" src={kimImg} alt="Small view 1" />
-              <img className="img-fluid small" src={kimImg} alt="Small view 2" />
+              <img className="img-fluid small" src={item.gallery[1]} alt="Small view 1" />
+              <img className="img-fluid small" src={item.gallery[2]} alt="Small view 2" />
             </div>
             <div className="smallImg d-flex">
-              <img className="img-fluid small" src={kimImg} alt="Small view 3" />
-              <img className="img-fluid small" src={kimImg} alt="Small view 4" />
+              <img className="img-fluid small" src={item.gallery[3]} alt="Small view 3" />
+              <img className="img-fluid small" src={item.gallery[4] || kimImg } alt="Small view 4" />
             </div>
           </Col>
         </Row>
@@ -72,7 +77,7 @@ const Restaurant = () => {
             <div className="d-flex host-info mb-3">
               <FontAwesomeIcon icon={faUtensils} className="me-2" />
               <div className="rest-name">
-                <h5>Kimchi Kitchen</h5>
+                <h5>Experience the vibrant flavors of Korea</h5>
                 <div className="d-flex">
                   <p className="mb-0 mr-2">5.0</p>
                   <p className="mb-0">★★★★★</p>
@@ -82,8 +87,7 @@ const Restaurant = () => {
             <div className="d-flex host-info mb-3">
               <FontAwesomeIcon icon={faMapMarkerAlt} className="user-img" />
               <p>
-                Shop 1, Royalyard Park 1, 9 Jacobus Smit Ave, Royal Glen,
-                Kimberley, 8301
+                {item.location}
               </p>
             </div>
             <div className="event-info-container mb-4">
@@ -109,13 +113,7 @@ const Restaurant = () => {
               </div>
             </div>
             <p className="event-content">
-              Experience the vibrant flavors of Korea at our restaurant, where
-              traditional dishes meet modern dining. From sizzling BBQ to savory
-              stews, our menu offers a diverse range of authentic Korean cuisine
-              prepared with fresh ingredients. Enjoy a warm, inviting atmosphere
-              perfect for both casual dining and special occasions. Book your
-              table today and immerse yourself in the rich culinary heritage of
-              Korea.
+              {item.description}
             </p>
           </Col>
           <Col md={6} className="event-card">
@@ -183,11 +181,10 @@ const Restaurant = () => {
                     </Form.Group>
                   </Dropdown.Menu>
                 </Dropdown>
-                <Link to="/confirm">
+                
                   <Button className="showbtn" variant="outline-dark">
                     Reserve
                   </Button>
-                </Link>
               </Form>
             </div>
           </Col>

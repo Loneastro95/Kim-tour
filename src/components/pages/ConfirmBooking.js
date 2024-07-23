@@ -25,7 +25,7 @@ const ConfirmBooking = () => {
     <div>
       <NavBar />
       <Container className="mt-4">
-        <h3>{name}</h3>
+        <h3 className="w-100">{name}</h3>
         <Row>
           <Col md={6}>
             <img src={guestHouseImage || kimImg} className="img-fluid" alt="Guest House" />

@@ -33,14 +33,14 @@ const Events = () => {
     <div>
       <NavBar />
       <Container>
-        <h3>Join a living room session with Doja</h3>
+        <h3 className="w-100">Hosted by Doja Cat</h3>
         <img src={KimImg} className="event-img " />
         <Row className="d-flex w-100 ">
           <Col md={6} className="event-card">
             <div className="d-flex host-info mb-3">
               <img src={user} className="user-img" />
               <div>
-                <h5>Hosted by Doja Cat</h5>
+                <h5>Join a living room session with Doja</h5>
                 <p>Artist</p>
               </div>
             </div>
