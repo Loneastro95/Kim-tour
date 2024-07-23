@@ -1,15 +1,41 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBed, faCalendarAlt, faUtensils,  faMapSigns } from '@fortawesome/free-solid-svg-icons';
-// Make sure to create and import this CSS file
-import "./filter.css";
-const Filters = () => {
-  const [activeTab, setActiveTab] = useState('stay');
+import { faBed, faCalendarAlt, faUtensils, faMapSigns } from '@fortawesome/free-solid-svg-icons';
+import './filter.css';
 
-  const handleClick = (tab) => {
+const Filters = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const getActiveTab = () => {
+    switch (location.pathname) {
+      case '/eventCard':
+        return 'events';
+      case '/restaurantsCard':
+        return 'restaurants';
+      case '/mallCard':
+        return 'malls';
+      case '/attractionCard':
+      return 'attraction'
+      case '/trip':
+        return 'trip';
+      default:
+        return 'stay';
+    }
+  };
+
+  const [activeTab, setActiveTab] = React.useState(getActiveTab);
+
+  React.useEffect(() => {
+    setActiveTab(getActiveTab());
+  }, [location]);
+
+  const handleClick = (tab, path) => {
     setActiveTab(tab);
+    navigate(path);
   };
 
   return (
@@ -18,7 +44,7 @@ const Filters = () => {
         <Button 
           variant="outline-primary"
           className={activeTab === 'stay' ? 'active' : ''}
-          onClick={() => handleClick('stay')}
+          onClick={() => handleClick('stay', '/')}
         >
           <FontAwesomeIcon icon={faBed} className='me-2' />
           Stay
@@ -26,7 +52,7 @@ const Filters = () => {
         <Button 
           variant="outline-primary"
           className={activeTab === 'events' ? 'active' : ''}
-          onClick={() => handleClick('events')}
+          onClick={() => handleClick('events', '/eventCard')}
         >
           <FontAwesomeIcon icon={faCalendarAlt} className='me-2' />
           Events
@@ -34,7 +60,7 @@ const Filters = () => {
         <Button 
           variant="outline-primary"
           className={activeTab === 'restaurants' ? 'active' : ''}
-          onClick={() => handleClick('restaurants')}
+          onClick={() => handleClick('restaurants', '/restaurantsCard')}
         >
           <FontAwesomeIcon icon={faUtensils} className='me-2' />
           Restaurants
@@ -42,19 +68,25 @@ const Filters = () => {
         <Button 
           variant="outline-primary"
           className={activeTab === 'malls' ? 'active' : ''}
-          onClick={() => handleClick('malls')}
+          onClick={() => handleClick('malls', '/mallCard')}
         >
-          <FontAwesomeIcon  className='me-2' />
           Malls
         </Button>{' '}
         <Button 
           variant="outline-primary"
+          className={activeTab === 'attraction' ? 'active' : ''}
+          onClick={() => handleClick('attraction', '/attractionCard')}
+        >
+          Attractions
+        </Button>{' '}
+        {/* <Button 
+          variant="outline-primary"
           className={activeTab === 'trip' ? 'active' : ''}
-          onClick={() => handleClick('trip')}
+          onClick={() => handleClick('trip', '/trip')}
         >
           <FontAwesomeIcon icon={faMapSigns} className='me-2' />
           Trip Planner
-        </Button>
+        </Button> */}
       </div>
     </Container>
   );

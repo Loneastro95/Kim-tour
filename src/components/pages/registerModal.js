@@ -5,12 +5,15 @@ import { faUser, faInfoCircle, faUserPlus, faEnvelope } from '@fortawesome/free-
 import kimImg from '../../../images/kimberly.jpg';
 import './Navcontainer.css'; // Ensure you have this CSS file
 import axios from 'axios';
+import { Link, useNavigate } from "react-router-dom";
 
 const Navcontainer = () => {
+  const navigate =  useNavigate();
   const [showModal, setShowModal] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
   const [showForgotPassword, setShowForgotPassword] = useState(false);
   const [userType, setUserType] = useState('');
+<<<<<<< HEAD
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -50,6 +53,51 @@ const Navcontainer = () => {
         alert(error);
       });
   };
+
+//   const [user, setUser] = useState({
+//     email : "",
+//     password : "",
+//     confirmPassword: "",
+//     userName: "",
+//     successMessage: null
+
+//   });
+//   const handleChange = (e) => {
+//     const {id , value} = e.target   
+//     setUser(prevUser => ({
+//         ...prevUser,
+//         [id] : value
+//     }))
+// }
+
+// const handleUserServe = (e) =>{
+//   e.preventDefault();
+
+//   console.log("Email: ", user.email);
+//     console.log("Password: ", user.password)
+
+//   axios.post("https://kim-tour-1.onrender.com/api/login", {
+//     emailAddress:"Kgaotlhaelwe@gmail.com",
+//     password:"123456789",
+//   })
+//              .then(function (response) {
+//               if(response.status === 200){
+//                 setUser(prevUser => ({
+//                   ...prevUser,
+//                   "successMessage": "Login Successful"
+//                 }))
+
+//               }
+              
+//               navigate('/confirm');
+//              })
+//              .catch(function (error){
+//               console.log(error);
+//               alert(error)
+//              });
+
+// }
+>>>>>>> 1207ef99a22d1bed5cf2357237c0d6234ed4b130
 
   const handleShow = () => setShowModal(true);
   const handleClose = () => setShowModal(false);

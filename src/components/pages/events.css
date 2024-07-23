@@ -1,0 +1,75 @@
+.event-img{
+    width: 100%;
+    aspect-ratio: 1/.4;
+    border-radius: 10px;
+}
+.info-container{
+    display: flex;
+   gap: 40px;
+}
+
+.host-info{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    border-bottom: 1px solid gray;
+    padding-bottom: 10px;
+}
+
+.event-info{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.event-info-container{
+    border-bottom: 1px solid gray;
+    padding-bottom: 10px; 
+}
+
+.buy-ticket-container{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: whitesmoke;
+    padding: 20px 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+}
+.event-content{
+    border-bottom: 1px solid gray;
+    padding-bottom: 10px;  
+}
+.Meet-host-container{
+    border-bottom: 1px solid gray;
+    padding-bottom: 10px;  
+}
+
+.host-container{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: whitesmoke;
+    padding: 20px 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+    text-align: center;
+}
+
+.host-img{
+    width: 100px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+
+.icon-lineup{
+    align-self: flex-start;
+}
+
+.user-img{
+    align-self: flex-start;
+    padding-top: 8px;
+}

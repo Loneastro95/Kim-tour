@@ -1,0 +1,36 @@
+.card {
+    border: none;
+    border-radius: 25px;
+    overflow: hidden; /* Ensure image doesn't overflow */
+  }
+  
+  .card img {
+    border-radius: 10px;
+    object-fit: cover; /* Ensure image covers the space */
+  }
+  
+  .cardBody {
+    border-radius: 25px;
+  }
+  
+  span {
+    font-weight: 700;
+    font-size: 1.2rem; /* Use rem for better scaling */
+  }
+  
+  .cardText {
+    line-height: 1.5; /* Better line height for readability */
+  }
+  .cardText {
+    width: 200px; /* Set the desired width */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* Ensure responsiveness */
+  @media (max-width: 576px) {
+    .card {
+      margin-bottom: 1rem; /* Adjust spacing on small screens */
+    }
+  }
