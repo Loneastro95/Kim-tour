@@ -2,21 +2,28 @@ import React, { useState } from "react";
 import { Container, Col, Form, Dropdown, Row, Button, InputGroup } from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import kimImg from "../../images/kimberly.jpg";
 import NavBar from "../header/top-header/navbar";
 import "./description.css";
-import user from "../../images/icons8-user-24.png";
-import desk from "../../images/icons8-swimming-pool-50.png";
-import metal from "../../images/icons8-achievement-48.png";
-import dive from "../../images/icons8-swimming-pool-50.png";
-import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { getAmenityIcon } from '../../utils/icons'; // Import the utility function
+import { useLocation, useNavigate } from "react-router-dom";
+
+// Ensure you have these imports and the library setup correctly
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faWifi, faSwimmer, faCoffee, faParking } from '@fortawesome/free-solid-svg-icons';
+
+// Add icons to the library
+library.add(faWifi, faSwimmer, faCoffee, faParking);
 
 const Description = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { item } = location.state || {}; // Retrieve the item from state
+
   const [checkInDate, setCheckInDate] = useState(null);
   const [checkOutDate, setCheckOutDate] = useState(null);
   const [adults, setAdults] = useState(1);
   const [children, setChildren] = useState(0);
-  const [totalGuest, setTotalGuest] = useState(0);
 
   const handleAdults = () => setAdults(adults + 1);
   const handleAdultsSub = () => adults > 1 && setAdults(adults - 1);
@@ -28,30 +35,61 @@ const Description = () => {
     setCheckOutDate(end);
   };
 
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+
+    if (!checkInDate || !checkOutDate) {
+      alert("Please select check-in and check-out dates.");
+      return;
+    }
+
+    const checkIn = new Date(checkInDate);
+    const checkOut = new Date(checkOutDate);
+
+    const timeDifference = checkOut.getTime() - checkIn.getTime();
+    const daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
+
+    const totalPrice = daysDifference * item.pricePerNight;
+
+    const formData = {
+      checkInDate,
+      checkOutDate,
+      adults,
+      children,
+      totalPrice,
+      daysDifference,
+      pricePerNight: item.pricePerNight,
+    };
+
+    console.log('Form Data:', formData);
+
+    navigate('/confirm', { state: { name: item.name, guestDetails: formData, guestHouseImage: item.gallery[0] } });
+  };
+
   return (
     <div>
       <NavBar />
-      <Container fluid className="mt-4">
-        <h3>Sasi Bush Lodge Morning Luxury Safari Tent</h3>
+      <Container className="mt-4">
+        <h3>{item.name}</h3>
         <Row className="imgContainer mb-4">
           <Col md={8}>
-            <img className="img-fluid big" src={kimImg} alt="Big view" />
+            <img className="img-fluid big" src={item.gallery[0]} alt="Big view" />
           </Col>
           <Col md={4} className="smallContainer d-flex flex-column justify-content-between">
             <div className="smallImg d-flex">
-              <img className="img-fluid small" src={kimImg} alt="Small view 1" />
-              <img className="img-fluid small" src={kimImg} alt="Small view 2" />
+              <img className="img-fluid small" src={item.gallery[1]} alt="Small view 1" />
+              <img className="img-fluid small" src={item.gallery[2]} alt="Small view 2" />
             </div>
             <div className="smallImg d-flex">
-              <img className="img-fluid small" src={kimImg} alt="Small view 3" />
-              <img className="img-fluid small" src={kimImg} alt="Small view 4" />
+              <img className="img-fluid small" src={item.gallery[3]} alt="Small view 3" />
+              <img className="img-fluid small" src={item.gallery[4]} alt="Small view 4" />
             </div>
           </Col>
         </Row>
         <Row className="Info-container">
           <Col md={8} className="details-container">
-            <h4 className="location-detail">Private room in tent in Bergville, Northern Drakensberg, South Africa</h4>
-            <p className="num-rooms">2 guests - 1 bedroom - 1 bed - 1.5 baths</p>
+            <h4 className="location-detail">{item.location}</h4>
+            <p className="num-rooms">{item.rooms[0].roomType}  1 bed  -  {item.rooms[1].roomType} 2</p>
             <div className="rating-container mb-4 p-3 bg-light shadow-sm rounded">
               <div className="guest-fav">
                 <h5 className="fav">Guest favorite</h5>
@@ -68,68 +106,18 @@ const Description = () => {
                 <p className="mb-0">reviews</p>
               </div>
             </div>
-            <div className="more-info-container mb-4 d-flex align-items-center">
-              <img className="icons mr-3" src={user} alt="User" />
-              <div className="more-text">
-                <p className="guest-view-text mb-0">Hosted by Pippa</p>
-                <p className="mb-0">Superhost · 3 years hosting</p>
-              </div>
-            </div>
-            <div className="more-info-container2 mb-4 d-flex align-items-center">
-              <img className="iconsml mr-3" src={desk} alt="Desk" />
-              <div className="more-text">
-                <p className="guest-view-text mb-0">Dedicated workspace</p>
-                <p className="mb-0">A room with wifi that’s well-suited for working.</p>
-              </div>
-            </div>
-            <div className="more-info-container2 mb-4 d-flex align-items-center">
-              <img className="iconsml mr-3" src={metal} alt="Metal" />
-              <div className="more-text">
-                <p className="guest-view-text mb-0">Pippa is a Superhost</p>
-                <p className="mb-0">Superhosts are experienced, highly rated Hosts.</p>
-              </div>
-            </div>
-            <div className="more-info-container2 mb-5 d-flex align-items-center">
-              <img className="iconsml mr-3" src={user} alt="User" />
-              <div className="more-text">
-                <p className="guest-view-text mb-0">Dive right in</p>
-                <p className="mb-0">This is one of the few places in the area with a pool.</p>
-              </div>
-            </div>
             <div className="description-text-container mb-5">
-              <p>Some info has been automatically translated. Show original</p>
-              <p className="description-text">
-                Ukusa Luxury Couple Tent offers expansive views overlooking the Drakensberg Mountains. This rate includes accommodation in a king-sized bed, breakfast, dinner, and a guided walk with wildlife sightings. Excluded in this rate are drinks and additional activities such as a game drive or full body massage!
-              </p>
-              <p>A kitchenette, open-air bath, rain shower, and private toilet add to your comfort; while...</p>
+              <p className="description-text">{item.description}</p>
             </div>
             <div className="offers-container mb-5">
               <h4 className="location-detail mb-4">What this place offers</h4>
               <Row className="offers-icons-container d-flex flex-wrap">
-                <Col lg={6} xs={12} className="mb-3 d-flex align-items-center">
-                  <img className="o-icons mr-2" src={desk} alt="Mountain view" />
-                  <p className="mb-0">Mountain view</p>
-                </Col>
-                <Col lg={6} xs={12} className="mb-3 d-flex align-items-center">
-                  <img className="o-icons mr-2" src={desk} alt="Lake access" />
-                  <p className="mb-0">Lake access</p>
-                </Col>
-                <Col lg={6} xs={12} className="mb-3 d-flex align-items-center">
-                  <img className="o-icons mr-2" src={desk} alt="Kitchen" />
-                  <p className="mb-0">Kitchen</p>
-                </Col>
-                <Col lg={6} xs={12} className="mb-3 d-flex align-items-center">
-                  <img className="o-icons mr-2" src={desk} alt="Wifi" />
-                  <p className="mb-0">Wifi</p>
-                </Col>
-                <Col lg={6} xs={12} className="mb-3 d-flex align-items-center">
-                  <img className="o-icons mr-2" src={desk} alt="Dedicated workspace" />
-                  <p className="mb-0">Dedicated workspace</p>
-                </Col>
-                <Col lg={6} xs={12} className="mb-3 d-flex align-items-center">
-                  <img className="o-icons mr-2" src={desk} alt="Free parking on premises" />
-                  <p className="mb-0">Free parking on premises</p>
-                </Col>
+                {item.amenities.map((amenity, index) => (
+                  <Col key={index} lg={6} xs={12} className="mb-3 d-flex align-items-center">
+                    <FontAwesomeIcon icon={getAmenityIcon(amenity)} className="o-icons mr-2" />
+                    <p className="mb-0">{amenity}</p>
+                  </Col>
+                ))}
                 <Col xs={12}>
                   <Button className="showbtn" variant="outline-dark">Show more</Button>
                 </Col>
@@ -138,8 +126,8 @@ const Description = () => {
           </Col>
           <Col md={4}>
             <div className="checkout-container mb-6 p-3 bg-light shadow-sm rounded">
-              <h4 className="date-for-price">R3,450 ZAR night</h4>
-              <Form>
+              <h4 className="date-for-price">R {item.pricePerNight} / night</h4>
+              <Form onSubmit={handleFormSubmit}>
                 <InputGroup className="checkin-out mb-3">
                   <DatePicker
                     selected={checkInDate}
@@ -155,7 +143,7 @@ const Description = () => {
                 </InputGroup>
                 <Dropdown className="guest-dropdown mb-3">
                   <Dropdown.Toggle variant="outline-dark" id="dropdown-basic">
-                    {totalGuest ? `${totalGuest} Guest${totalGuest > 1 ? 's' : ''}` : 'Select Guests'}
+                    {adults + children ? `${adults + children} Guest${adults + children > 1 ? 's' : ''}` : 'Select Guests'}
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
                     <Form.Group className="dropdown-item d-flex justify-content-between align-items-center">
@@ -176,9 +164,7 @@ const Description = () => {
                     </Form.Group>
                   </Dropdown.Menu>
                 </Dropdown>
-                <Link to="/confirm">
-                  <Button className="showbtn" variant="outline-dark">Reserve</Button>
-                </Link>
+                <Button className="showbtn" variant="outline-dark" type="submit">Reserve</Button>
               </Form>
             </div>
           </Col>

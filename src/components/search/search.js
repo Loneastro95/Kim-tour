@@ -9,7 +9,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { FaCalendarAlt } from "react-icons/fa";
 import { MdPeople } from "react-icons/md";
 import "./search.css";
-
+import Button from "react-bootstrap/Button";
 const Search = () => {
   const [checkInDate, setCheckInDate] = useState(null);
   const [checkOutDate, setCheckOutDate] = useState(null);
@@ -27,77 +27,16 @@ const Search = () => {
   };
 
   return (
-    <Container fluid className="bg-primary p-5 mb-6 hero">
+    <Container fluid className=" p-5 hero" style={{background:'#14213d'}}>
       <div className="content">
         <div className="text-left message">
           <p className="line-one">Discover the Hidden Gems of Northern Cape</p>
           <p className="line-three">Your Next Adventure Awaits in South Africa's Northern Cape</p>
+          <Button style={{background:'#669bbc'}}>Find your favourite restaurant</Button>
+          <Button style={{background:''}}>Find your favourite events</Button>
+
         </div>
-        <Navbar className="search-container">
-          <div className="search-form">
-            <Form inline>
-              <InputGroup className="input-group">
-                <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
-                <Form.Control placeholder="Place" aria-label="Place" aria-describedby="basic-addon1" />
-              </InputGroup>
-            </Form>
-            <Form inline>
-              <div className="datepicker-container">
-                <div className="datepicker-item">
-                  <DatePicker
-                    selected={checkInDate}
-                    onChange={dates => handleDateChange(dates)}
-                    startDate={checkInDate}
-                    endDate={checkOutDate}
-                    selectsStart
-                    className="form-control datepicker-input"
-                    placeholderText="Check-In"
-                    dateFormat="yyyy-MM-dd"
-                    minDate={new Date()}
-                  />
-                  <FaCalendarAlt className="datepicker-icon" />
-                </div>
-                <div className="datepicker-item">
-                  <DatePicker
-                    selected={checkOutDate}
-                    onChange={dates => handleDateChange(dates)}
-                    startDate={checkInDate}
-                    endDate={checkOutDate}
-                    selectsEnd
-                    minDate={checkInDate ? checkInDate : new Date()}
-                    className="form-control datepicker-input"
-                    placeholderText="Check-Out"
-                    dateFormat="yyyy-MM-dd"
-                  />
-                  <FaCalendarAlt className="datepicker-icon" />
-                </div>
-              </div>
-            </Form>
-            <Dropdown className="dropdown">
-              <Dropdown.Toggle variant="dark" id="dropdown-basic">
-                <MdPeople className="dropdown-icon" /> People
-              </Dropdown.Toggle>
-              <Dropdown.Menu>
-                <div className="d-flex justify-content-center pl-5 pr-5">
-                  <p className="font-weight-bold">Adults</p>
-                  <div className="button-container">
-                    <button onClick={handleAdultsSub}>-</button>
-                    <span className="px-2">{adults}</span>
-                    <button onClick={handleAdults}>+</button>
-                  </div>
-                </div>
-                <div className="d-flex justify-content-center pl-5 pr-5">
-                  <p className="font-weight-bold">Children</p>
-                  <div className="button-container">
-                    <button onClick={handleChildrenSub}>-</button>
-                    <span className="px-2">{children}</span>
-                    <button onClick={handleChildren}>+</button>
-                  </div>
-                </div>
-              </Dropdown.Menu>
-            </Dropdown>
-          </div>
-        </Navbar>
+        
       </div>
     </Container>
   );

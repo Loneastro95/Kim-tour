@@ -41,4 +41,13 @@
   button {
     margin-top: 1rem;
   }
+
+  .toast-container {
+    position: absolute;
+    top: calc(100% + 20px); /* Adjust the top value to position below the modal */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1050; /* Ensure it is above other content but below the modal */
+  }
+  
   

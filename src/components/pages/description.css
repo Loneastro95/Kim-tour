@@ -1,138 +1,137 @@
-/* Add this CSS to center the content */
 .center-wrapper {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    min-height: 100vh; /* Full viewport height */
-  }
-  
-  .container-fluid {
-    max-width: 1200px; /* Adjust as needed */
-    padding: 0 15px; /* Add some padding for better spacing */
-  }
-  
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  min-height: 100vh; /* Full viewport height */
+}
+
+.container-fluid {
+  max-width: 2000px; /* Adjust as needed */
+  padding: 0 10px; /* Reduced padding */
+}
+
+.big {
+  height: 400px;
+  width: 100%; /* Reduced height */
+  object-fit: cover;
+}
+
+.smallContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.smallImg {
+  display: flex;
+  gap: 4px; /* Reduced gap */
+}
+
+.small {
+  flex: 1;
+  height: 180px; /* Reduced height */
+  object-fit: cover;
+}
+
+.imgContainer {
+  margin-top: 8px; /* Reduced from 20px */
+}
+
+.Info-container {
+  margin-top: 8px; /* Reduced from 20px */
+}
+
+.details-container .rating-container {
+  margin-bottom: 8px; /* Reduced from 20px */
+}
+
+.more-info-container,
+.more-info-container2 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px; /* Reduced from 20px */
+}
+
+.icons,
+.iconsml {
+  width: 20px; /* Reduced width */
+  height: 20px; /* Reduced height */
+  margin-right: 6px; /* Reduced margin */
+}
+
+.description-text-container {
+  margin-bottom: 8px; /* Reduced from 20px */
+}
+
+.offers-container .offers-icons-container {
+  margin-top: 8px; /* Reduced from 20px */
+}
+
+.offers-icons-container .o-icons {
+  width: 20px; /* Reduced width */
+  height: 20px; /* Reduced height */
+  margin-right: 6px; /* Reduced margin */
+}
+
+.date-for-price {
+  font-size: 18px; /* Reduced font size */
+  font-weight: bold;
+  margin-bottom: 8px; /* Reduced from 20px */
+}
+
+.checkin-out {
+  margin-bottom: 8px; /* Reduced from 20px */
+}
+
+.guest-dropdown .guest-count {
+  display: flex;
+  align-items: center;
+}
+
+.guest-count .guest-count-btn {
+  width: 28px; /* Reduced width */
+  height: 28px; /* Reduced height */
+}
+
+.guest-count .guest-count-value {
+  font-size: 14px; /* Reduced font size */
+}
+
+.showbtn {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
   .big {
-    height: 400px;
-    object-fit: cover;
+    height: 250px; /* Further reduced height */
   }
-  
-  .smallContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  .smallImg {
-    display: flex;
-    gap: 5px;
-  }
-  
+
   .small {
-    flex: 1;
-    height: 195px;
-    object-fit: cover;
+    height: 120px; /* Further reduced height */
   }
-  
+
   .imgContainer {
-    margin-top: 20px;
+    margin-top: 8px; /* Further reduced */
   }
-  
+
   .Info-container {
-    margin-top: 20px;
+    margin-top: 8px; /* Further reduced */
   }
-  
+
   .details-container .rating-container {
-    margin-bottom: 20px;
+    margin-bottom: 8px; /* Further reduced */
   }
-  
+
   .more-info-container,
   .more-info-container2 {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 8px; /* Further reduced */
   }
-  
-  .icons,
-  .iconsml {
-    width: 24px;
-    height: 24px;
-    margin-right: 10px;
-  }
-  
+
   .description-text-container {
-    margin-bottom: 20px;
+    margin-bottom: 8px; /* Further reduced */
   }
-  
+
   .offers-container .offers-icons-container {
-    margin-top: 20px;
+    margin-top: 8px; /* Further reduced */
   }
-  
-  .offers-icons-container .o-icons {
-    width: 24px;
-    height: 24px;
-    margin-right: 10px;
-  }
-  
-  .date-for-price {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .checkin-out {
-    margin-bottom: 20px;
-  }
-  
-  .guest-dropdown .guest-count {
-    display: flex;
-    align-items: center;
-  }
-  
-  .guest-count .guest-count-btn {
-    width: 30px;
-    height: 30px;
-  }
-  
-  .guest-count .guest-count-value {
-    font-size: 16px;
-  }
-  
-  .showbtn {
-    width: 100%;
-  }
-  
-  @media (max-width: 768px) {
-    .big {
-      height: 300px;
-    }
-  
-    .small {
-      height: 140px;
-    }
-  
-    .imgContainer {
-      margin-top: 15px;
-    }
-  
-    .Info-container {
-      margin-top: 15px;
-    }
-  
-    .details-container .rating-container {
-      margin-bottom: 15px;
-    }
-  
-    .more-info-container,
-    .more-info-container2 {
-      margin-bottom: 15px;
-    }
-  
-    .description-text-container {
-      margin-bottom: 15px;
-    }
-  
-    .offers-container .offers-icons-container {
-      margin-top: 15px;
-    }
-  }
-  
+}

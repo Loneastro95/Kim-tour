@@ -1,32 +1,32 @@
+
 .hero {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   display: flex;
   justify-content: center;
-  align-items: center; /* Align items horizontally */
+  align-items: center;
   flex-direction: column;
   color: white;
   text-align: left;
   gap: 20px;
+ height: 400px;
 }
 
 .content {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .message {
-  padding: 0 50px; /* Adjust padding as needed */
-  margin-bottom: 10px; /* Adjust margin as needed */
-  text-align: center; /* Center text */
+  padding: 0 50px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .line-one {
   font-size: 32px;
   font-weight: 700;
-  margin-bottom: 10px; /* Adjust margin as needed */
+  margin-bottom: 10px;
 }
 
 .line-two {
@@ -39,17 +39,15 @@
   opacity: 80%;
   padding: 10px;
   border-radius: 10px;
-  position: relative;
-  top: 0;
-  width: 100%; /* Ensure full width */
-  max-width: 1200px; /* Add a max-width if needed */
+  width: 100%;
+  max-width: 1200px;
 }
 
 .search-form {
   display: flex;
   gap: 10px;
-  align-items: center; /* Align items vertically centered */
-  justify-content: center; /* Center items horizontally */
+  align-items: center;
+  justify-content: center;
   width: 100%;
 }
 
@@ -70,7 +68,7 @@
 }
 
 .datepicker-input {
-  padding-left: 30px; /* Adjust padding to accommodate icon */
+  padding-left: 30px;
 }
 
 .datepicker-icon {
@@ -94,4 +92,18 @@
 .dropdown-icon {
   font-size: 18px;
   color: white;
+}
+
+@media (max-width: 768px) {
+  .search-form {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .input-group,
+  .datepicker-container,
+  .dropdown {
+    flex: none;
+    width: 100%;
+  }
 }

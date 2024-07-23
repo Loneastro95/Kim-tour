@@ -1,12 +1,16 @@
 .card {
-    border: none;
-    border-radius: 25px;
-    overflow: hidden; /* Ensure image doesn't overflow */
+  border: none;
+  border-radius: 25px;
+  height: 400px; /* Fixed height */
+  overflow: hidden; /* Ensure content does not overflow */
+  display: flex;
+  flex-direction: column; /* Arrange children vertically */
   }
   
   .card img {
-    border-radius: 10px;
-    object-fit: cover; /* Ensure image covers the space */
+    width: 100%; /* Make image take full width */
+  height: 60%; /* Adjust height as needed */
+  object-fit: cover; /* Ensure image cov
   }
   
   .cardBody {
