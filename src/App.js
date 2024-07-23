@@ -9,6 +9,8 @@ import Restaurant from './components/pages/Restaurant';
 import RestaurantCard from './components/body/RestaurantCard';
 import MallCard from './components/body/MallCard';
 import Malls from './components/pages/Mall';
+import Attractions from './components/pages/Attractions';
+import AttractionsCard from './components/body/AttractionsCard';
 function App() {
   return (
     <div className="App">
@@ -22,6 +24,8 @@ function App() {
          <Route path='/restaurants' element={<Restaurant/>} />
          <Route path='/mallCard' element={<MallCard/>} />
          <Route path='/malls' element={<Malls/>} />
+         <Route path='/attraction' element={<Attractions/>} />
+         <Route path='/attractionCard' element={<AttractionsCard/>} />
        </Routes>
     </div>
   );

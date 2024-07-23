@@ -10,7 +10,7 @@ import {
 } from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import KimImg from "../../images/restaurant.avif";
+import kimImg from "../../images/restaurant.avif";
 import { Link } from "react-router-dom";
 import "./restaurant.css";
 import NavBar from "../header/top-header/navbar";
@@ -29,6 +29,7 @@ import {
   faMapMarkerAlt,
   faCertificate ,
   faDollarSign,
+  faMoneyBill,
 } from "@fortawesome/free-solid-svg-icons";
 
 const Restaurant = () => {
@@ -50,8 +51,22 @@ const Restaurant = () => {
     <div>
       <NavBar />
       <Container>
-        <h3>Join a living room session with Doja</h3>
-        <img src={KimImg} className="event-img " />
+        <h3>Experience the vibrant flavors of Korea</h3>
+        <Row className="imgContainer mb-4">
+          <Col md={8}>
+            <img className="img-fluid big" src={kimImg} alt="Big view" />
+          </Col>
+          <Col md={4} className="smallContainer d-flex flex-column justify-content-between">
+            <div className="smallImg d-flex">
+              <img className="img-fluid small" src={kimImg} alt="Small view 1" />
+              <img className="img-fluid small" src={kimImg} alt="Small view 2" />
+            </div>
+            <div className="smallImg d-flex">
+              <img className="img-fluid small" src={kimImg} alt="Small view 3" />
+              <img className="img-fluid small" src={kimImg} alt="Small view 4" />
+            </div>
+          </Col>
+        </Row>
         <Row className="d-flex w-100 ">
           <Col md={6} className="event-card">
             <div className="d-flex host-info mb-3">
@@ -73,7 +88,8 @@ const Restaurant = () => {
             </div>
             <div className="event-info-container mb-4">
               <div className="d-flex event-info ">
-              <FontAwesomeIcon icon={faDollarSign} />
+              <FontAwesomeIcon icon={faMoneyBill} />
+
                 <div>
                   <h6>R150 and under</h6>
                 </div>
@@ -103,7 +119,7 @@ const Restaurant = () => {
             </p>
           </Col>
           <Col md={6} className="event-card">
-            <div className="checkout-container mb-6 p-3 bg-light shadow-sm rounded">
+            <div className="checkout-container mb-6 p-3 bg-light shadow-sm rounded w-50">
               <h4 className="date-for-price">Come Dine with us</h4>
               <Form className="w-100">
                 <InputGroup className="checkin-out mb-3 ">

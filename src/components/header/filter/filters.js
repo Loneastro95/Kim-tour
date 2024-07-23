@@ -18,6 +18,8 @@ const Filters = () => {
         return 'restaurants';
       case '/mallCard':
         return 'malls';
+      case '/attractionCard':
+      return 'attraction'
       case '/trip':
         return 'trip';
       default:
@@ -72,12 +74,19 @@ const Filters = () => {
         </Button>{' '}
         <Button 
           variant="outline-primary"
+          className={activeTab === 'attraction' ? 'active' : ''}
+          onClick={() => handleClick('attraction', '/attractionCard')}
+        >
+          Attractions
+        </Button>{' '}
+        {/* <Button 
+          variant="outline-primary"
           className={activeTab === 'trip' ? 'active' : ''}
           onClick={() => handleClick('trip', '/trip')}
         >
           <FontAwesomeIcon icon={faMapSigns} className='me-2' />
           Trip Planner
-        </Button>
+        </Button> */}
       </div>
     </Container>
   );

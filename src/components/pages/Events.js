@@ -25,6 +25,7 @@ import {
   faMusic,
   faLock,
   faStar,
+  faMicrophone
 } from "@fortawesome/free-solid-svg-icons";
 
 const Events = () => {
@@ -49,10 +50,10 @@ const Events = () => {
                 <div>
                   <h5>Line up</h5>
                   {[...Array(4)].map((_, index) => (
-          <ul key={index}>
+          <ol key={index}>
             <li>Doja Cat</li>
             
-          </ul>
+          </ol>
         ))}
                 </div>
               </div>
