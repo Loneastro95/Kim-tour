@@ -1,12 +1,12 @@
 .card {
   border: none;
   border-radius: 25px;
-  height: 400px; /* Fixed height */
+  aspect-ratio: 1/1.2; /* Fixed height */
   overflow: hidden; /* Ensure content does not overflow */
   display: flex;
   flex-direction: column; /* Arrange children vertically */
   }
-  
+
   .card img {
     width: 100%; /* Make image take full width */
   height: 60%; /* Adjust height as needed */
@@ -25,6 +25,11 @@
   .cardText {
     line-height: 1.5; /* Better line height for readability */
   }
+
+  /* .explore-header{
+    text-align: center;
+    
+  } */
   
   /* Ensure responsiveness */
   @media (max-width: 576px) {

@@ -67,6 +67,7 @@ function CardContainer() {
           ))}
         </Row>
       </Container>
+     
       <Explore/>
       <Footer/>
     </div>

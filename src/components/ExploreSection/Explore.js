@@ -6,7 +6,9 @@ import explore2 from "../../images/explore2.jpg";
 import "./explore.css";
 const Explore = () => {
   return (
-    <div className="explore-container mt-3">
+    <div className="explore-container mt-5">
+      <h3 className="explore-header text-center">Explore Kimberley</h3>
+      <p className="text-center">Discover the historic charm and local delights. Kimberley awaits!</p>
       <Carousel className="carousel-container">
         <Carousel.Item interval={2500}>
           <img className="d-block w-100" src={explore1} alt="Image One" />
