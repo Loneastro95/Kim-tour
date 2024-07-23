@@ -11,7 +11,7 @@ import {
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import kimImg from "../../images/mall.jpg";
-import { Link } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./restaurant.css";
 import NavBar from "../header/top-header/navbar";
 import user from "../../images/icons8-user-24.png";
@@ -50,9 +50,9 @@ const Malls = () => {
     setCheckInDate(date);
   };
 
-  
-  const lat = -28.7163;  // Example latitude for Northern Cape Mall
-  const lng = 24.7554;   // Example longitude for Northern Cape Mall
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { item } = location.state || {}; // Retrieve the item from state
 
   const handleButtonClick = () => {
     const googleMapsUrl = `https://maps.app.goo.gl/46a3RT8xDb4zzR9Z7`;
@@ -63,10 +63,10 @@ const Malls = () => {
     <div>
       <NavBar />
       <Container>
-        <h3>Come shop with us</h3>
+        <h3 className="w-100">{item.name}</h3>
         <Row className="imgContainer mb-4">
           <Col md={8}>
-            <img className="img-fluid big" src={kimImg} alt="Big view" />
+            <img className="img-fluid big" src={ item.gallery[0] || kimImg} alt="Big view" />
           </Col>
           <Col
             md={4}
@@ -75,24 +75,24 @@ const Malls = () => {
             <div className="smallImg d-flex">
               <img
                 className="img-fluid small"
-                src={kimImg}
+                src={item.gallery[1] || kimImg}
                 alt="Small view 1"
               />
               <img
                 className="img-fluid small"
-                src={kimImg}
+                src={item.gallery[2] || kimImg}
                 alt="Small view 2"
               />
             </div>
             <div className="smallImg d-flex">
               <img
                 className="img-fluid small"
-                src={kimImg}
+                src={item.gallery[3] || kimImg}
                 alt="Small view 3"
               />
               <img
                 className="img-fluid small"
-                src={kimImg}
+                src={item.gallery[4] || kimImg}
                 alt="Small view 4"
               />
             </div>
@@ -103,7 +103,7 @@ const Malls = () => {
             <div className="d-flex host-info mb-3">
               <FontAwesomeIcon icon={faStore} className="me-2" />
               <div className="rest-name">
-                <h5>Northern Cape Mall</h5>
+                <h5>Come shop with us</h5>
                 <div className="d-flex">
                   <p className="mb-0 mr-2">5.0</p>
                   <p className="mb-0">★★★★★</p>

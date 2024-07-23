@@ -9,6 +9,7 @@ import KimImg from "../../images/kimberly.jpg"; // Default image if needed
 import "./card.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import Footer from "../footer/footer";
 
 function CardContainer() {
   const navigate = useNavigate();
@@ -19,7 +20,7 @@ function CardContainer() {
   useEffect(() => {
     axios.get("http://localhost:3000/api/fetchData")
       .then(response => {
-        console.log(response)
+        console.log(response.data.accommodations)
         setData(response.data.accommodations
         );
         setLoading(false);
@@ -44,27 +45,29 @@ function CardContainer() {
   })
 
   return (
-    <Container>
-      <Row xs={1} sm={2} md={3} lg={4} xl={4} className="g-4">
-        {data.map((item, index) => (
-          <Col key={index}>
-            
-              <Card className="card mt-4"  onClick={()=>handleCardClick(item)} >
-                <Card.Img variant="top" src={item.gallery[0] || KimImg} />
-                <Card.Body className="cardBody">
-                  <Card.Title>locatio</Card.Title>
-                  <Card.Text className="cardText">Hosted By</Card.Text>
-                  <Card.Text className="cardText">Date</Card.Text>
-                  <Card.Text className="cardText">
-                    <span>Price: price</span> per night
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            
-          </Col>
-        ))}
-      </Row>
-    </Container>
+    <div>
+      <Container>
+        <Row xs={1} sm={2} md={3} lg={4} xl={4} className="g-4">
+          {data.map((item, index) => (
+            <Col key={index}>
+      
+                <Card className="card mt-4"  onClick={()=>handleCardClick(item)} >
+                  <Card.Img variant="top" src={item.gallery[0] || KimImg} />
+                  <Card.Body className="cardBody">
+                    <Card.Title>{item.name}</Card.Title>
+                    <Card.Text className="cardText">{item.location}</Card.Text>
+                    <Card.Text className="cardText">
+                      <span>Price: {item.pricePerNight}</span> per night
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+      
+            </Col>
+          ))}
+        </Row>
+      </Container>
+      <Footer/>
+    </div>
   );
 }
 

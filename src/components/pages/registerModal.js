@@ -13,7 +13,7 @@ const Navcontainer = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [showForgotPassword, setShowForgotPassword] = useState(false);
   const [userType, setUserType] = useState('');
-<<<<<<< HEAD
+
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -97,7 +97,7 @@ const Navcontainer = () => {
 //              });
 
 // }
->>>>>>> 1207ef99a22d1bed5cf2357237c0d6234ed4b130
+
 
   const handleShow = () => setShowModal(true);
   const handleClose = () => setShowModal(false);

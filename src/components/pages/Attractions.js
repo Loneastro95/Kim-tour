@@ -147,11 +147,11 @@ const Attractions = () => {
             <div className="checkout-container  mb-6 p-3 bg-light shadow-sm rounded w-50">
               <h4 className="date-for-price text-center">Get directions </h4>
               <Form className="w-100">
-                <Link to="/confirm">
+                
                   <Button className="showbtn" variant="outline-dark" onClick={handleButtonClick }>
                     Reserve
                   </Button>
-                </Link>
+                
               </Form>
             </div>
           </Col>

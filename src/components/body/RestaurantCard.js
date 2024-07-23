@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {useState, useEffect} from "react";
 import Header from "../header/header";
 import {
   Container,
@@ -10,18 +10,23 @@ import {
   Button,
   InputGroup,
 } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import KimImg from "../../images/restaurant.avif";
 import "./restaurantCard.css";
 import axios from "axios";
+import Footer from "../footer/footer";
+
 const RestaurantCard = () => {
+
+  const navigate = useNavigate();
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
   useEffect(() => {
     axios.get("http://localhost:3000/api/fetchData")
       .then(response => {
-        console.log(response)
+        console.log(response.data.restaurants)
         setData(response.data.restaurants
         );
         setLoading(false);
@@ -32,21 +37,33 @@ const RestaurantCard = () => {
       });
   }, []);
 
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
+  const handleCardClick = ((item)=>{
+    console.log(data)
+    navigate(`/restaurants`, { state: { item } });
+  })
+
   return (
     <div>
       <Header />
       <Container>
         <Row xs={1} sm={2} md={3} lg={4} xl={4} className="g-4">
-          {[...Array(8)].map((_, index) => (
+          {data.map((item, index) => (
             <Col key={index}>
-              
-                <Card className="card mt-4">
-                  <Card.Img variant="top" src={KimImg} />
+             
+                <Card className="card mt-4" onClick={()=>handleCardClick(item)}>
+                  <Card.Img variant="top" src={item.gallery[0] || KimImg} />
                   <Card.Body className="cardBody">
-                    <Card.Title>Kimchi Kitchen</Card.Title>
+                    <Card.Title>{item.name}</Card.Title>
                     <Card.Text className="cardText">
-                      Shop 1, Royalyard Park 1, 9 Jacobus Smit Ave, Royal Glen,
-                      Kimberley, 8301
+                      {item.location}
                     </Card.Text>
                   </Card.Body>
                 </Card>
@@ -55,6 +72,7 @@ const RestaurantCard = () => {
           ))}
         </Row>
       </Container>
+      <Footer/>
     </div>
   );
 };

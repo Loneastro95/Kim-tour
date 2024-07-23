@@ -13,7 +13,7 @@ import {
 import { Link } from "react-router-dom";
 import KimImg from "../../images/big-hole.jpg";
 import "./restaurantCard.css";
-
+import Footer from "../footer/footer";
 const AttractionsCard = () => {
   return (
     <div>
@@ -40,6 +40,7 @@ const AttractionsCard = () => {
         ))}
       </Row>
     </Container>
+    <Footer/>
   </div>
   )
 }
