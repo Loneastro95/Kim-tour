@@ -18,7 +18,7 @@ function CardContainer() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/api/fetchData")
+    axios.get("https://kim-tour-1.onrender.com/api/fetchData")
       .then(response => {
         console.log(response.data.accommodations)
         setData(response.data.accommodations
