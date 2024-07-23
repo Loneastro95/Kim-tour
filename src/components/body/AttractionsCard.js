@@ -14,7 +14,23 @@ import { Link } from "react-router-dom";
 import KimImg from "../../images/big-hole.jpg";
 import "./restaurantCard.css";
 import Footer from "../footer/footer";
+import axios from "axios";
 const AttractionsCard = () => {
+
+  useEffect(() => {
+    axios.get("https://kim-tour-1.onrender.com/api/fetchData")
+      .then(response => {
+        console.log(response.data.accommodations)
+        setData(response.data.accommodations
+        );
+        setLoading(false);
+      })
+      .catch(error => {
+        setError(error);
+        setLoading(false);
+      });
+  }, []);
+
   return (
     <div>
     <Header />
