@@ -10,6 +10,7 @@ import "./card.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Footer from "../footer/footer";
+import Explore from "../ExploreSection/Explore";
 
 function CardContainer() {
   const navigate = useNavigate();
@@ -66,6 +67,7 @@ function CardContainer() {
           ))}
         </Row>
       </Container>
+      <Explore/>
       <Footer/>
     </div>
   );
