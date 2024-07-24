@@ -1,12 +1,19 @@
 .card {
   border: none;
   border-radius: 25px;
-  height: 400px; /* Fixed height */
+  aspect-ratio: 1/1.1; /* Fixed height */
   overflow: hidden; /* Ensure content does not overflow */
   display: flex;
   flex-direction: column; /* Arrange children vertically */
+  background-color: whitesmoke;
+  transition: 0.6s;
   }
-  
+
+  .card:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    aspect-ratio: 1/1.2;
+    background-color: whitesmoke;  
+  }
   .card img {
     width: 100%; /* Make image take full width */
   height: 60%; /* Adjust height as needed */
@@ -25,6 +32,11 @@
   .cardText {
     line-height: 1.5; /* Better line height for readability */
   }
+
+  /* .explore-header{
+    text-align: center;
+    
+  } */
   
   /* Ensure responsiveness */
   @media (max-width: 576px) {

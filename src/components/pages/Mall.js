@@ -113,8 +113,7 @@ const Malls = () => {
             <div className="d-flex host-info mb-3">
               <FontAwesomeIcon icon={faMapMarkerAlt} className="user-img" />
               <p>
-                Shop 1, Royalyard Park 1, 9 Jacobus Smit Ave, Royal Glen,
-                Kimberley, 8301
+                {item.location}
               </p>
             </div>
             <div className="event-info-container mb-4">
@@ -141,14 +140,7 @@ const Malls = () => {
               </div>
             </div>
             <p className="event-content">
-              North Cape Mall is an established Kimberley landmark, well
-              supported and anchored in the community. It is located along the
-              N12 – Memorial Street, with easy access and ample free parking. It
-              includes established and well supported national anchors such as
-              Pick ‘n pay, Woolworths Food, Game, Sportsman’s Warehouse and
-              Dis-Chem. The centre boasts a significant entertainment offering
-              with a Ster Kinekor showcasing the latest block busters and
-              Fantasia games arcade creating hours of family fun.
+            {item.description}
             </p>
           </Col>
           <Col md={6} className="event-card">
@@ -157,7 +149,7 @@ const Malls = () => {
               <Form className="w-100">
                 
                   <Button className="showbtn" variant="outline-dark"  onClick={handleButtonClick}>
-                    GO to mall
+                    Directions
                   </Button>
             
               </Form>

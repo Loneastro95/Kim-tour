@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "axios"; 
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
@@ -10,6 +10,7 @@ import "./card.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Footer from "../footer/footer";
+import Explore from "../ExploreSection/Explore";
 
 function CardContainer() {
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ function CardContainer() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/api/fetchData")
+    axios.get("https://kim-tour-1.onrender.com/api/fetchData")
       .then(response => {
         console.log(response.data.accommodations)
         setData(response.data.accommodations
@@ -66,6 +67,8 @@ function CardContainer() {
           ))}
         </Row>
       </Container>
+     
+      <Explore/>
       <Footer/>
     </div>
   );

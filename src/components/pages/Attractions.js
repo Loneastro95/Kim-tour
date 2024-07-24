@@ -11,7 +11,7 @@ import {
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import kimImg from "../../images/big-hole.jpg";
-import { Link } from "react-router-dom";
+
 import "./restaurant.css";
 import NavBar from "../header/top-header/navbar";
 import user from "../../images/icons8-user-24.png";
@@ -35,8 +35,14 @@ import {
   faArrowTurnRight,
   faMoneyBill
 } from "@fortawesome/free-solid-svg-icons";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Attractions = () => {
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { item } = location.state || {}; // Retrieve the item from state
+
   const [checkInDate, setCheckInDate] = useState(null);
   const [checkOutDate, setCheckOutDate] = useState(null);
   const [adults, setAdults] = useState(1);
@@ -56,42 +62,24 @@ const Attractions = () => {
     window.open(googleMapsUrl, '_blank');
   };
 
+
   return (
     <div>
       <NavBar />
       <Container>
-      <h3>Learn about the Big Hole</h3>
-        <Row className="imgContainer mb-4">
+      <h3 className="w-100">{item.name}</h3>
+      <Row className="imgContainer mb-4">
           <Col md={8}>
-            <img className="img-fluid big" src={kimImg} alt="Big view" />
+            <img className="img-fluid big" src={item.gallery[0] } alt="Big view" />
           </Col>
-          <Col
-            md={4}
-            className="smallContainer d-flex flex-column justify-content-between"
-          >
+          <Col md={4} className="smallContainer d-flex flex-column justify-content-between">
             <div className="smallImg d-flex">
-              <img
-                className="img-fluid small"
-                src={kimImg}
-                alt="Small view 1"
-              />
-              <img
-                className="img-fluid small"
-                src={kimImg}
-                alt="Small view 2"
-              />
+              <img className="img-fluid small" src={item.gallery[1] || kimImg } alt="Small view 1" />
+              <img className="img-fluid small" src={ item.gallery[2] || kimImg  } alt="Small view 2" />
             </div>
             <div className="smallImg d-flex">
-              <img
-                className="img-fluid small"
-                src={kimImg}
-                alt="Small view 3"
-              />
-              <img
-                className="img-fluid small"
-                src={kimImg}
-                alt="Small view 4"
-              />
+              <img className="img-fluid small" src={ item.gallery[3] || kimImg  } alt="Small view 3" />
+              <img className="img-fluid small" src={ item.gallery[4] || kimImg  } alt="Small view 4" />
             </div>
           </Col>
         </Row>
@@ -100,7 +88,7 @@ const Attractions = () => {
             <div className="d-flex host-info mb-3">
               <FontAwesomeIcon icon={faStore} className="me-2" />
               <div className="rest-name">
-                <h5>The Big Hole Museum</h5>
+                <h5>Learn about the Big Hole</h5>
                 <div className="d-flex">
                   <p className="mb-0 mr-2">5.0</p>
                   <p className="mb-0">★★★★★</p>
@@ -109,7 +97,7 @@ const Attractions = () => {
             </div>
             <div className="d-flex host-info mb-3">
               <FontAwesomeIcon icon={faMapMarkerAlt} className="user-img" />
-              <p>161, Tucker St, West End, Kimberley, 8301</p>
+              <p>{item.location}</p>
             </div>
             <div className="event-info-container mb-4">
               <div className="d-flex event-info ">
@@ -136,11 +124,7 @@ const Attractions = () => {
               </div>
             </div>
             <p className="event-content">
-              Kimberley Big Hole History 150 years ago, the site of the Big Hole
-              was a featureless, flat-topped hill. When word spread that
-              diamonds had been discovered, thousands of prospectors, armed with
-              nothing more than picks, shovels and hope, descended on Kimberley
-              and created the largest hand-dug excavation in the world.
+            {item.description}
             </p>
           </Col>
           <Col md={6} className="event-card">
@@ -149,7 +133,7 @@ const Attractions = () => {
               <Form className="w-100">
                 
                   <Button className="showbtn" variant="outline-dark" onClick={handleButtonClick }>
-                    Reserve
+                   Directions
                   </Button>
                 
               </Form>

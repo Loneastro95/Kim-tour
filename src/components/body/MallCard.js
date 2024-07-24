@@ -24,7 +24,7 @@ const MallCard = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/api/fetchData")
+    axios.get("https://kim-tour-1.onrender.com/api/fetchData")
       .then(response => {
         console.log(response.data.malls)
         setData(response.data.malls
@@ -59,7 +59,7 @@ const MallCard = () => {
           <Col key={index}>
             
               <Card className="card mt-4" onClick={()=>handleCardClick(item)} >
-                <Card.Img variant="top" src={ KimImg} />
+                <Card.Img variant="top" src={item.gallery[0] || KimImg } />
                 <Card.Body className="cardBody">
                   <Card.Title>{item.name}</Card.Title>
                   <Card.Text className="cardText">

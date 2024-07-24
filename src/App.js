@@ -11,7 +11,7 @@ import MallCard from './components/body/MallCard';
 import Malls from './components/pages/Mall';
 import Attractions from './components/pages/Attractions';
 import AttractionsCard from './components/body/AttractionsCard';
-import Footer from './components/footer/footer';
+
 function App() {
   return (
      <Routes>
@@ -26,7 +26,7 @@ function App() {
          <Route path='/malls' element={<Malls/>} />
          <Route path='/attraction' element={<Attractions/>} />
          <Route path='/attractionCard' element={<AttractionsCard/>} />
-         {/* <Route path='/' element={<Footer/>} /> */}
+        
        </Routes>
   );
 }

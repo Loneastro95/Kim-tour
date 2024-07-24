@@ -1,0 +1,48 @@
+.explore-container{
+    
+    
+}
+
+.carousel-container{
+    width: 100%;
+    aspect-ratio: 1/.3;
+
+}
+
+img{
+    width: 100%;
+    aspect-ratio: 1/.4;
+}
+.explore-header{
+    font-weight: 800;
+    
+}
+.explore-text{
+    background-color: black;
+    opacity: 60%;
+    color: whitesmoke;
+    width: 70%;
+    text-align: center;
+    margin-top: 0;
+    padding: 10px;
+    font-size: 1.1rem;
+    
+}
+
+.carousel-caption {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    text-align: center;
+    height: 100%; /* Ensure it takes full height of the carousel item */
+  }
+  
+  .explore-header {
+    font-size: 1.7rem; /* Adjust size as needed */
+    margin-bottom: 1rem; /* Space between header and text */
+  }
+  
+  .explore-text {
+    font-size: 1rem; /* Adjust size as needed */
+  }

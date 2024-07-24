@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBed, faCalendarAlt, faUtensils, faMapSigns } from '@fortawesome/free-solid-svg-icons';
+import { faBed, faCalendarAlt, faUtensils, faMapSigns, faShoppingCart, faLandmark  } from '@fortawesome/free-solid-svg-icons';
 import './filter.css';
 
 const Filters = () => {
@@ -70,6 +70,7 @@ const Filters = () => {
           className={activeTab === 'malls' ? 'active' : ''}
           onClick={() => handleClick('malls', '/mallCard')}
         >
+          <FontAwesomeIcon icon={faShoppingCart} className="me-2" />
           Malls
         </Button>{' '}
         <Button 
@@ -77,6 +78,7 @@ const Filters = () => {
           className={activeTab === 'attraction' ? 'active' : ''}
           onClick={() => handleClick('attraction', '/attractionCard')}
         >
+          <FontAwesomeIcon icon={faLandmark} className="me-2" />
           Attractions
         </Button>{' '}
         {/* <Button 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../header/header";
 import {
   Container,
@@ -11,7 +11,7 @@ import {
   InputGroup,
 } from "react-bootstrap";
 import KimImg from "../../images/Party.jpg";
-import { Link } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./events.css";
 import NavBar from "../header/top-header/navbar";
 import user from "../../images/icons8-user-24.png";
@@ -25,23 +25,28 @@ import {
   faMusic,
   faLock,
   faStar,
-  faMicrophone
+  faMicrophone,
+  faStore
 } from "@fortawesome/free-solid-svg-icons";
 
 const Events = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { item } = location.state || {}; // Retrieve the item from state
+
   return (
     <div>
       <NavBar />
       <Container>
-        <h3 className="w-100">Hosted by Doja Cat</h3>
-        <img src={KimImg} className="event-img " />
+        <h3 className="w-100">{item.name}</h3>
+        <img src={item.image|| KimImg} className="event-img " />
         <Row className="d-flex w-100 ">
           <Col md={6} className="event-card">
             <div className="d-flex host-info mb-3">
-              <img src={user} className="user-img" />
+            <FontAwesomeIcon icon={faStore} className="me-2" />
               <div>
-                <h5>Join a living room session with Doja</h5>
-                <p>Artist</p>
+                <h5>{item.location}</h5>
+                
               </div>
             </div>
             <div className="event-info-container mb-4">
