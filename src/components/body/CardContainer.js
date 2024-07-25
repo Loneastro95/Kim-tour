@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Footer from "../footer/footer";
 import Explore from "../ExploreSection/Explore";
+import { RotatingLines } from "react-loader-spinner";
 
 function CardContainer() {
   const navigate = useNavigate();
@@ -33,7 +34,15 @@ function CardContainer() {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className="d-flex justify-content-center align-items-center vh-100">
+    <RotatingLines
+    strokeColor="grey"
+    strokeWidth="5"
+    animationDuration="0.75"
+    width="96"
+    visible={true}
+      />
+  </div>;
   }
 
   if (error) {

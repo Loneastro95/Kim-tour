@@ -7,8 +7,10 @@ import './Navcontainer.css'; // Ensure you have this CSS file
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify'; // Import ToastContainer and toast
 import 'react-toastify/dist/ReactToastify.css'; // Import the CSS for react-toastify
+import { useNavigate } from 'react-router-dom'; // Import Link from react-router-dom
 
 const Navcontainer = () => {
+  const navigate = useNavigate()
   const [showModal, setShowModal] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
   const [showForgotPassword, setShowForgotPassword] = useState(false);
@@ -109,12 +111,18 @@ const Navcontainer = () => {
     }));
   };
 
+
+  const handleLogoClick = (()=>{
+   
+    navigate(`/`);
+  })
+
   return (
     <>
-      <Navbar expand="lg" className="navbar-airbnb">
+      <Navbar expand="lg" className="navbar-airbnb mb-4">
         <Container>
-          <Navbar.Brand className="brand-name" href="#home">
-            <img src={kimImg} alt="KIM TOUR" className="brand-logo" />
+          <Navbar.Brand className="brand-name" style={{color: '#007bff', fontSize: '1.5rem'}}  onClick={handleLogoClick}>
+            
             KIM TOUR
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />

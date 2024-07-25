@@ -11,6 +11,7 @@ import MallCard from './components/body/MallCard';
 import Malls from './components/pages/Mall';
 import Attractions from './components/pages/Attractions';
 import AttractionsCard from './components/body/AttractionsCard';
+import EmergencyCard from './components/body/EmergencyCard';
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
          <Route path='/malls' element={<Malls/>} />
          <Route path='/attraction' element={<Attractions/>} />
          <Route path='/attractionCard' element={<AttractionsCard/>} />
-        
+         <Route path='/emergencyCard' element={<EmergencyCard/>} />
        </Routes>
   );
 }

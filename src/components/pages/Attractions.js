@@ -33,7 +33,8 @@ import {
   faShieldAlt,
   faParking,
   faArrowTurnRight,
-  faMoneyBill
+  faMoneyBill,
+  faArrowLeft
 } from "@fortawesome/free-solid-svg-icons";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -57,17 +58,25 @@ const Attractions = () => {
     setCheckInDate(date);
   };
 
+  // const DirectionsButton = ({ item }) => {
+  //   const handleButtonClick = () => {
+  //     const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(item.location)}`;
+  //     window.open(googleMapsUrl, '_blank');
+  //   };
+
   const handleButtonClick = () => {
-    const googleMapsUrl = `https://maps.app.goo.gl/qPHD7xAoqD4p9s9P9`;
+    const googleMapsUrl =  `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(item.location)}`;
     window.open(googleMapsUrl, '_blank');
   };
-
+  const handlebackbtn = () =>{
+    navigate('/eventCard')
+  }
 
   return (
     <div>
       <NavBar />
       <Container>
-      <h3 className="w-100">{item.name}</h3>
+      <h3 className="w-100"><FontAwesomeIcon onClick={handlebackbtn} icon={faArrowLeft} className="me-2"/>{item.name}</h3>
       <Row className="imgContainer mb-4">
           <Col md={8}>
             <img className="img-fluid big" src={item.gallery[0] } alt="Big view" />

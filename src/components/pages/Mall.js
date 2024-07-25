@@ -33,9 +33,12 @@ import {
   faShieldAlt,
   faParking,
   faArrowTurnRight,
+  faArrowLeft
 } from "@fortawesome/free-solid-svg-icons";
 
+
 const Malls = () => {
+
   const [checkInDate, setCheckInDate] = useState(null);
   const [checkOutDate, setCheckOutDate] = useState(null);
   const [adults, setAdults] = useState(1);
@@ -55,15 +58,18 @@ const Malls = () => {
   const { item } = location.state || {}; // Retrieve the item from state
 
   const handleButtonClick = () => {
-    const googleMapsUrl = `https://maps.app.goo.gl/46a3RT8xDb4zzR9Z7`;
+    const googleMapsUrl =  `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(item.location)}`;
     window.open(googleMapsUrl, '_blank');
   };
+  const handlebackbtn = () =>{
+    navigate('/mallCard')
+  }
 
   return (
     <div>
       <NavBar />
       <Container>
-        <h3 className="w-100">{item.name}</h3>
+        <h3 className="w-100"><FontAwesomeIcon onClick={handlebackbtn} icon={faArrowLeft} className="me-2"/>{item.name}</h3>
         <Row className="imgContainer mb-4">
           <Col md={8}>
             <img className="img-fluid big" src={ item.gallery[0] || kimImg} alt="Big view" />
@@ -117,13 +123,13 @@ const Malls = () => {
               </p>
             </div>
             <div className="event-info-container mb-4">
-              <div className="d-flex event-info ">
+              {/* <div className="d-flex event-info ">
                 <FontAwesomeIcon icon={faParking} />
                 <div>
                   <h6>R150 and under</h6>
                 </div>
-              </div>
-              <div className="d-flex event-info ">
+              </div> */}
+              {/* <div className="d-flex event-info ">
                 <FontAwesomeIcon icon={faShieldAlt} />
                 <div>
                   <h6>
@@ -131,13 +137,18 @@ const Malls = () => {
                     highest safety standards.
                   </h6>
                 </div>
-              </div>
-              <div className="d-flex event-info">
+              </div> */}
+              {/* <div className="d-flex event-info">
                 <FontAwesomeIcon icon={faClock} />
                 <div>
                   <h6>08:00 till 18:00</h6>
                 </div>
-              </div>
+              </div> */}
+
+              {item.shops.map((shop) => (
+                <h6> <FontAwesomeIcon icon={faStore}  className="me-2"/>{shop.shopName}</h6>
+                
+              ))}
             </div>
             <p className="event-content">
             {item.description}

@@ -46,3 +46,10 @@ img{
   .explore-text {
     font-size: 1rem; /* Adjust size as needed */
   }
+
+  @media (max-width: 768px) {
+    img{
+      width: 100%;
+      aspect-ratio: 1/.8;
+  }
+  }

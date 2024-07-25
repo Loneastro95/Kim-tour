@@ -10,7 +10,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 // Ensure you have these imports and the library setup correctly
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faWifi, faSwimmer, faCoffee, faParking } from '@fortawesome/free-solid-svg-icons';
+import { faWifi, faSwimmer, faCoffee, faParking, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 // Add icons to the library
 library.add(faWifi, faSwimmer, faCoffee, faParking);
@@ -66,11 +66,15 @@ const Description = () => {
     navigate('/confirm', { state: { name: item.name, guestDetails: formData, guestHouseImage: item.gallery[0] } });
   };
 
+  const handlebackbtn = () =>{
+    navigate('/')
+  }
+
   return (
     <div>
       <NavBar />
       <Container className="mt-4">
-        <h3 className="w-100">{item.name}</h3>
+        <h3 className="w-100"><FontAwesomeIcon onClick={handlebackbtn} icon={faArrowLeft} className="me-2"/>{item.name}</h3>
         <Row className="imgContainer mb-4">
           <Col md={8}>
             <img className="img-fluid big" src={item.gallery[0]} alt="Big view" />

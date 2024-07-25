@@ -26,7 +26,9 @@ import {
   faLock,
   faStar,
   faMicrophone,
-  faStore
+  faStore,
+  faMapMarkerAlt,
+  faArrowLeft
 } from "@fortawesome/free-solid-svg-icons";
 
 const Events = () => {
@@ -34,18 +36,22 @@ const Events = () => {
   const location = useLocation();
   const { item } = location.state || {}; // Retrieve the item from state
 
+  const handlebackbtn = () =>{
+    navigate('/eventCard')
+  }
+
   return (
     <div>
       <NavBar />
       <Container>
-        <h3 className="w-100">{item.name}</h3>
-        <img src={item.image|| KimImg} className="event-img " />
+        <h3 className="w-100"><FontAwesomeIcon onClick={handlebackbtn} icon={faArrowLeft} className="me-2"/>{item.name}</h3>
+        <img src={item.image || KimImg} className="event-img " />
         <Row className="d-flex w-100 ">
           <Col md={6} className="event-card">
             <div className="d-flex host-info mb-3">
-            <FontAwesomeIcon icon={faStore} className="me-2" />
+            <FontAwesomeIcon icon={faMapMarkerAlt} className="me-2" />
               <div>
-                <h5>{item.location}</h5>
+                <h5 className="mt-3">{item.location}</h5>
                 
               </div>
             </div>
@@ -80,27 +86,9 @@ const Events = () => {
               </div>
             </div>
             <p className="event-content">
-              Fresh from headlining festivals and my European tour, I’m bringing
-              my very special show directly to you in an intimate living room
-              environment. Music is my passion, I can’t wait to share that piece
-              of my world with you in a way you’ll never forget. Kick it with
-              me, and my cats. More details coming soon.
+              {item.description}
             </p>
-            {/* <div className="Meet-host-container">
-              <h3>Meet the host</h3>
 
-              <div className="host-container mb-3">
-                <img src={KimImg} className="host-img mb-2" />
-                <h3>Doja Cat</h3>
-                <p>Started hosting in </p>
-              </div>
-
-              <div className="interests-container">
-                <div className="interest d-flex">
-
-                </div>
-              </div>
-            </div> */}
           </Col>
           <Col md={6} className="event-card">
             <div className="buy-ticket-container">

@@ -30,6 +30,7 @@ import {
   faCertificate ,
   faDollarSign,
   faMoneyBill,
+  faArrowLeft
 } from "@fortawesome/free-solid-svg-icons";
 
 const Restaurant = () => {
@@ -52,12 +53,16 @@ const Restaurant = () => {
     setCheckInDate(date);
   };
 
+  const handlebackbtn = () =>{
+    navigate('/restaurantsCard')
+  }
+
   return (
     <div>
       <NavBar />
       <Container>
         <h3 className="w-100">{item.name}</h3>
-        <Row className="imgContainer mb-4">
+        <Row className="imgContainer mb-4"><FontAwesomeIcon onClick={handlebackbtn} icon={faArrowLeft} className="me-2"/>
           <Col md={8}>
             <img className="img-fluid big" src={item.gallery[0]} alt="Big view" />
           </Col>

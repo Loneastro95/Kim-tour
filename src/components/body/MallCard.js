@@ -15,6 +15,7 @@ import KimImg from "../../images/mall.jpg";
 import "./restaurantCard.css";
 import axios from "axios";
 import Footer from "../footer/footer";
+import { RotatingLines } from "react-loader-spinner";
 
 const MallCard = () => {
 
@@ -38,7 +39,15 @@ const MallCard = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className="d-flex justify-content-center align-items-center vh-100">
+    <RotatingLines
+    strokeColor="grey"
+    strokeWidth="5"
+    animationDuration="0.75"
+    width="96"
+    visible={true}
+      />
+  </div>;
   }
 
   if (error) {

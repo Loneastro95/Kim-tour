@@ -15,6 +15,7 @@ import KimImg from "../../images/Party.jpg";
 import './eventCard.css';
 import Footer from "../footer/footer";
 import axios from "axios";
+import { RotatingLines } from "react-loader-spinner";
 
 
 
@@ -27,7 +28,9 @@ const EventCard = () => {
 
   useEffect(() => {
     axios.get("https://kim-tour-1.onrender.com/api/fetchData")
+
       .then(response => {
+        console.group(response)
         console.log(response.data.events)
         setData(response.data.events
         );
@@ -40,7 +43,15 @@ const EventCard = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className="d-flex justify-content-center align-items-center vh-100">
+      <RotatingLines
+      strokeColor="grey"
+      strokeWidth="5"
+      animationDuration="0.75"
+      width="96"
+      visible={true}
+        />
+    </div>;
   }
 
   if (error) {
@@ -51,7 +62,6 @@ const EventCard = () => {
     console.log(data)
     navigate(`/event`, { state: { item } });
   })
-
   return (
 
     <div>
@@ -61,8 +71,8 @@ const EventCard = () => {
           {data.map((item, index) => (
               <Col key={index}>
                 
-                  <Card className="card mt-4" onClick={handleCardClick}>
-                    <Card.Img variant="top" src={item.image|| KimImg} />
+                  <Card className="card mt-4" onClick={()=>handleCardClick(item)}>
+                    <Card.Img variant="top" src={item.image || KimImg} />
                     <Card.Body className="cardBody">
                       <div className='d-flex card-info'>
                           <div>
@@ -70,8 +80,9 @@ const EventCard = () => {
                               
                           </div>
                           <div className='info'>
+                              <Card.Text className="cardText">{item.name}</Card.Text>
                               <Card.Text className="cardText">{item.location}</Card.Text>
-                              <Card.Text className="cardText">(item.price)</Card.Text>
+                              <Card.Text className="cardText">R{item.price}</Card.Text>
                           </div>
                       </div>
                     </Card.Body>

@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBed, faCalendarAlt, faUtensils, faMapSigns, faShoppingCart, faLandmark  } from '@fortawesome/free-solid-svg-icons';
+import { faBed, faCalendarAlt, faUtensils, faMapSigns, faShoppingCart, faLandmark, faExclamationTriangle  } from '@fortawesome/free-solid-svg-icons';
 import './filter.css';
 
 const Filters = () => {
@@ -20,8 +20,8 @@ const Filters = () => {
         return 'malls';
       case '/attractionCard':
       return 'attraction'
-      case '/trip':
-        return 'trip';
+      case '/emergencyCard':
+        return 'emergency';
       default:
         return 'stay';
     }
@@ -39,8 +39,8 @@ const Filters = () => {
   };
 
   return (
-    <Container className='d-flex justify-content-center'>
-      <div className='pt-2 pb-2 mt-5'>
+    <Container className='d-flex justify-content-center filter-btn'>
+      <div className='pt-2 pb-2 mt-5 filter-btn'>
         <Button 
           variant="outline-primary"
           className={activeTab === 'stay' ? 'active' : ''}
@@ -71,7 +71,7 @@ const Filters = () => {
           onClick={() => handleClick('malls', '/mallCard')}
         >
           <FontAwesomeIcon icon={faShoppingCart} className="me-2" />
-          Malls
+          Shopping
         </Button>{' '}
         <Button 
           variant="outline-primary"
@@ -81,14 +81,14 @@ const Filters = () => {
           <FontAwesomeIcon icon={faLandmark} className="me-2" />
           Attractions
         </Button>{' '}
-        {/* <Button 
-          variant="outline-primary"
-          className={activeTab === 'trip' ? 'active' : ''}
-          onClick={() => handleClick('trip', '/trip')}
+        <Button 
+          variant="outline-danger"
+          className={activeTab === 'emergency' ? 'active' : ''}
+          onClick={() => handleClick('emergency', '/emergencyCard')}
         >
-          <FontAwesomeIcon icon={faMapSigns} className='me-2' />
-          Trip Planner
-        </Button> */}
+          <FontAwesomeIcon icon={faExclamationTriangle } className='me-2' />
+          Emergency No.
+        </Button>
       </div>
     </Container>
   );

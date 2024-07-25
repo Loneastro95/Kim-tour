@@ -1,0 +1,13 @@
+.Emcard{
+    background-color: whitesmoke;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    aspect-ratio: 1/.5;
+}
+
+.font{
+    color: rgb(20, 33, 61);
+}
