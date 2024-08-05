@@ -13,5 +13,45 @@ button.active {
     border-color: #0056b3;
     margin: 5px;
   }
+
+
+  /* filter.css */
+
+/* General styles for the filter buttons */
+.filter-btn {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+/* Hide the scrollbar for Webkit-based browsers */
+.filter-btn::-webkit-scrollbar {
+  display: none;
+}
+
+/* Add some padding and margin for a better look */
+.filter-btn > div {
+  padding: 0 5px;
+}
+
+/* Styles for the buttons inside the container */
+.filter-btn button {
+  white-space: nowrap;
+}
+
+/* Adjust the container and buttons for smaller screens */
+@media (max-width: 768px) {
+  .filter-btn {
+    padding: 10px 0;
+  }
+  
+  .filter-btn button {
+    flex: 0 0 auto;
+    margin: 0 5px;
+  }
+}
+
   
   

@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBed, faCalendarAlt, faUtensils, faMapSigns, faShoppingCart, faLandmark, faExclamationTriangle  } from '@fortawesome/free-solid-svg-icons';
+import { faBed, faCalendarAlt, faUtensils, faMapSigns, faShoppingCart, faLandmark, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import './filter.css';
 
 const Filters = () => {
@@ -19,7 +19,7 @@ const Filters = () => {
       case '/mallCard':
         return 'malls';
       case '/attractionCard':
-      return 'attraction'
+        return 'attraction';
       case '/emergencyCard':
         return 'emergency';
       default:
@@ -86,7 +86,7 @@ const Filters = () => {
           className={activeTab === 'emergency' ? 'active' : ''}
           onClick={() => handleClick('emergency', '/emergencyCard')}
         >
-          <FontAwesomeIcon icon={faExclamationTriangle } className='me-2' />
+          <FontAwesomeIcon icon={faExclamationTriangle} className='me-2' />
           Emergency No.
         </Button>
       </div>
