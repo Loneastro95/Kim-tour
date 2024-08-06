@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import Header from "../header/header";
 import {
   Container,
@@ -10,6 +10,8 @@ import {
   Button,
   InputGroup,
 } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
 import KimImg from "../../images/restaurant.avif";
 import "./restaurantCard.css";
@@ -23,6 +25,7 @@ const RestaurantCard = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const containerRef = useRef(null);
 
   useEffect(() => {
     axios.get("https://kim-tour-1.onrender.com/api/fetchData")
@@ -37,6 +40,15 @@ const RestaurantCard = () => {
         setLoading(false);
       });
   }, []);
+
+
+  const handleScroll = (direction) => {
+    if (direction === "left") {
+      containerRef.current.scrollBy({ left: -300, behavior: "smooth" });
+    } else {
+      containerRef.current.scrollBy({ left: 300, behavior: "smooth" });
+    }
+  };
 
   if (loading) {
     return <div className="d-flex justify-content-center align-items-center vh-100">
@@ -62,24 +74,35 @@ const RestaurantCard = () => {
   return (
     <div>
       <Header />
-      <Container>
-        <Row xs={1} sm={2} md={3} lg={4} xl={4} className="g-4">
+      <Container className="position-relative">
+      <div className="card-container row flex-nowrap" ref={containerRef}>
           {data.map((item, index) => (
-            <Col key={index}>
-             
-                <Card className="card mt-4" onClick={()=>handleCardClick(item)}>
-                  <Card.Img variant="top" src={item.gallery[0] || KimImg} />
-                  <Card.Body className="cardBody">
-                    <Card.Title>{item.name}</Card.Title>
-                    <Card.Text className="cardText">
-                      {item.location}
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-              
-            </Col>
+            <div className="col-sm-4 card-inner" key={index}>
+              <Card className="card mt-4" onClick={() => handleCardClick(item)}>
+                <Card.Img variant="top" src={item.gallery[0] || KimImg} />
+                <Card.Body className="cardBody">
+                  <Card.Title>{item.name}</Card.Title>
+                  <Card.Text className="cardText">{item.location}</Card.Text>
+                  <Card.Text className="cardText">
+                    <span>Price: {item.pricePerNight}</span> per night
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </div>
           ))}
-        </Row>
+        </div>
+        <div className="scroll-btn">
+        <FontAwesomeIcon
+          icon={faChevronLeft}
+          className="scroll-button left"
+          onClick={() => handleScroll("left")}
+        />
+        <FontAwesomeIcon
+          icon={faChevronRight}
+          className="scroll-button right"
+          onClick={() => handleScroll("right")}
+        />
+        </div>
       </Container>
       <Footer/>
     </div>

@@ -1,47 +1,70 @@
+.card-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 1rem 0;
+  gap: .2rem;
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+.card-container::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
 .card {
   border: none;
   border-radius: 25px;
-  aspect-ratio: 1/1.1; /* Fixed height */
-  overflow: hidden; /* Ensure content does not overflow */
+  overflow: hidden;
   display: flex;
-  flex-direction: column; /* Arrange children vertically */
+  flex-direction: column;
   background-color: whitesmoke;
   transition: 0.6s;
-  }
+  flex: 0 0 auto; /* Prevent flex items from shrinking */
+  width: 100%; /* Ensure card takes full width of Col */
+}
 
-  .card:hover{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    aspect-ratio: 1/1.2;
-    background-color: whitesmoke;  
-  }
-  .card img {
-    width: 100%; /* Make image take full width */
-  height: 60%; /* Adjust height as needed */
-  object-fit: cover; /* Ensure image cov
-  }
-  
-  .cardBody {
-    border-radius: 25px;
-  }
-  
-  span {
-    font-weight: 700;
-    font-size: 1.2rem; /* Use rem for better scaling */
-  }
-  
-  .cardText {
-    line-height: 1.5; /* Better line height for readability */
-  }
+.card:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: whitesmoke;
+}
 
-  /* .explore-header{
-    text-align: center;
-    
-  } */
-  
-  /* Ensure responsiveness */
-  @media (max-width: 576px) {
-    .card {
-      margin-bottom: 1rem; /* Adjust spacing on small screens */
-    }
+.card img {
+  width: 100%;
+  aspect-ratio: 1/.58;
+  object-fit: cover;
+}
+
+.cardBody {
+  border-radius: 25px;
+}
+
+span {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.cardText {
+  line-height: 1.5;
+}
+.scroll-btn{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+
+.card-inner{
+  width: 80%;
+}
+
+@media (max-width: 576px) {
+  .card {
+    width: 100%; /* Adjust width for mobile view */
+    margin-right: .1rem; /* Add some spacing between cards */
   }
-  
+  .scroll-btn{
+    display: none;
+  }
+}

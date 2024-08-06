@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import Header from "../header/header";
 import {
   Container,
@@ -10,6 +10,8 @@ import {
   Button,
   InputGroup,
 } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
 import KimImg from "../../images/Party.jpg";
 import './eventCard.css';
@@ -25,6 +27,7 @@ const EventCard = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const containerRef = useRef(null);  
 
   useEffect(() => {
     axios.get("https://kim-tour-1.onrender.com/api/fetchData")
@@ -41,6 +44,14 @@ const EventCard = () => {
         setLoading(false);
       });
   }, []);
+
+  const handleScroll = (direction) => {
+    if (direction === "left") {
+      containerRef.current.scrollBy({ left: -300, behavior: "smooth" });
+    } else {
+      containerRef.current.scrollBy({ left: 300, behavior: "smooth" });
+    }
+  };
 
   if (loading) {
     return <div className="d-flex justify-content-center align-items-center vh-100">
@@ -66,10 +77,10 @@ const EventCard = () => {
 
     <div>
         <Header />
-        <Container>
-          <Row xs={1} sm={2} md={3} lg={4} xl={4} className="g-4">
+        <Container className="position-relative">
+        <div className="card-container row flex-nowrap" ref={containerRef}>
           {data.map((item, index) => (
-              <Col key={index}>
+             <div className="col-sm-4 card-inner" key={index}>
                 
                   <Card className="card mt-4" onClick={()=>handleCardClick(item)}>
                     <Card.Img variant="top" src={item.image || KimImg} />
@@ -87,9 +98,9 @@ const EventCard = () => {
                       </div>
                     </Card.Body>
                   </Card>
-              </Col>
+              </div>
             ))}
-          </Row>
+          </div>
         </Container>
         <Footer/>
     </div>
