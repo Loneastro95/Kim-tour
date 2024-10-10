@@ -42,8 +42,8 @@ const Search = () => {
         <div className="text-left message">
           <p className="line-one">Discover the Hidden Gems of the Diamond City</p>
           <p className="line-three">Your Next Adventure Awaits in Kimberley</p>
-          <Button onClick={handleFavRestaurant} style={{background:'#669bbc'}}>Find your favourite restaurant</Button>
-          <Button onClick={handleFavEvent} style={{background:'rgb(20, 33, 61)'}}>Find your favourite events</Button>
+          <Button onClick={handleFavRestaurant} style={{background:'#669bbc'}} className="mt-2">Find your favourite restaurant</Button>
+          <Button onClick={handleFavEvent} style={{background:'rgb(20, 33, 61)'}} className="mt-2">Find your favourite events</Button>
 
         </div>
         

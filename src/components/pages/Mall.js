@@ -69,7 +69,7 @@ const Malls = () => {
     <div>
       <NavBar />
       <Container>
-        <h3 className="w-100"><FontAwesomeIcon onClick={handlebackbtn} icon={faArrowLeft} className="me-2"/>{item.name}</h3>
+        <h3 className="w-100"><FontAwesomeIcon onClick={handlebackbtn} icon={faArrowLeft} className="me-2 arrow"/>{item.name}</h3>
         <Row className="imgContainer mb-4">
           <Col md={8}>
             <img className="img-fluid big" src={ item.gallery[0] || kimImg} alt="Big view" />
@@ -154,7 +154,7 @@ const Malls = () => {
             {item.description}
             </p>
           </Col>
-          <Col md={6} className="event-card">
+          <Col md={6} className="event-card checkout">
             <div className="checkout-container  mb-6 p-3 bg-light shadow-sm rounded w-50">
               <h4 className="date-for-price text-center">Get directions </h4>
               <Form className="w-100">

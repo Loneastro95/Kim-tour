@@ -44,7 +44,7 @@ const Events = () => {
     <div>
       <NavBar />
       <Container>
-        <h3 className="w-100"><FontAwesomeIcon onClick={handlebackbtn} icon={faArrowLeft} className="me-2"/>{item.name}</h3>
+        <h3 className="w-100"><FontAwesomeIcon onClick={handlebackbtn} icon={faArrowLeft} className="me-2 arrow"/>{item.name}</h3>
         <img src={item.image || KimImg} className="event-img " />
         <Row className="d-flex w-100 ">
           <Col md={6} className="event-card">
@@ -90,7 +90,7 @@ const Events = () => {
             </p>
 
           </Col>
-          <Col md={6} className="event-card">
+          <Col md={6} className="event-card checkout">
             <div className="buy-ticket-container">
               <h3>Coming September</h3>
               <Button className="w-100">Buy Ticket</Button>

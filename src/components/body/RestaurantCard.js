@@ -75,7 +75,7 @@ const RestaurantCard = () => {
     <div>
       <Header />
       <Container className="position-relative">
-      <div className="card-container row flex-nowrap" ref={containerRef}>
+      <div className="card-container row " ref={containerRef}>
           {data.map((item, index) => (
             <div className="col-sm-4 card-inner" key={index}>
               <Card className="card mt-4" onClick={() => handleCardClick(item)}>

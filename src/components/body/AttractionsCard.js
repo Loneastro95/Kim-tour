@@ -74,9 +74,9 @@ const AttractionsCard = () => {
     <div>
     <Header />
     <Container className="position-relative">
-      <div className="card-container row flex-nowrap" ref={containerRef}>
+      <div className="card-container row " ref={containerRef}>
           {data.map((item, index) => (
-            <div className="col-sm-4 card-inner" key={index}>
+            <div className="col-sm-4 card-inner " key={index}>
               <Card className="card mt-4" onClick={() => handleCardClick(item)}>
                 <Card.Img variant="top" src={item.gallery[0] || KimImg} />
                 <Card.Body className="cardBody">

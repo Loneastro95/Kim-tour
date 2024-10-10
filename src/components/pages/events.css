@@ -73,3 +73,15 @@
     align-self: flex-start;
     padding-top: 8px;
 }
+
+@media (max-width: 576px) {
+    .arrow{
+        display: none;
+    }
+
+    .checkout{
+        width: 100%;
+    }
+
+  }
+
