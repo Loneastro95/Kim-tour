@@ -26,14 +26,21 @@
   gap: 5px;
 }
 
+.imgContainer, .container-fluid {
+  padding-right: 0;
+  padding-left: 0;
+}
+
 .small {
   flex: 1;
   height: 195px;
   object-fit: cover;
+  
 }
 
 .imgContainer {
   margin-top: 20px;
+  width: 100%;
 }
 
 .rest-name{

@@ -119,7 +119,7 @@ const Navcontainer = () => {
 
   return (
     <>
-      <Navbar expand="lg" className="navbar-airbnb mb-4">
+      <Navbar expand="lg" className="navbar-airbnb">
         <Container>
           <Navbar.Brand className="brand-name" style={{color: '#007bff', fontSize: '1.5rem'}}  onClick={handleLogoClick}>
             

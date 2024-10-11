@@ -91,7 +91,7 @@ const Description = () => {
           </Col>
         </Row>
         <Row className="Info-container">
-          <Col md={8} className="details-container">
+          <Col md={8} className="details-container ">
             <h4 className="location-detail">{item.location}</h4>
             <p className="num-rooms">{item.rooms[0].roomType}  1 bed  -  {item.rooms[1].roomType} 2</p>
             <div className="rating-container mb-4 p-3 bg-light shadow-sm rounded">
@@ -128,7 +128,7 @@ const Description = () => {
               </Row>
             </div>
           </Col>
-          <Col md={4}>
+          <Col md={4} className="main-chackout">
             <div className="checkout-container mb-6 p-3 bg-light shadow-sm rounded">
               <h4 className="date-for-price">R {item.pricePerNight} / night</h4>
               <Form onSubmit={handleFormSubmit}>

@@ -61,8 +61,8 @@ const Restaurant = () => {
     <div>
       <NavBar />
       <Container>
-        <h3 className="w-100">{item.name}</h3>
-        <Row className="imgContainer mb-4"><FontAwesomeIcon onClick={handlebackbtn} icon={faArrowLeft} className="me-2 arrow"/>
+        <h3 className="w-100"><FontAwesomeIcon onClick={handlebackbtn} icon={faArrowLeft} className="me-2 arrow"/>{item.name}</h3>
+        <Row className="imgContainer mb-4">
           <Col md={8}>
             <img className="img-fluid big" src={item.gallery[0]} alt="Big view" />
           </Col>

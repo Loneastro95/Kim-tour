@@ -101,6 +101,8 @@
   width: 100%;
 }
 
+
+
 @media (max-width: 768px) {
   .big {
     height: 250px; /* Further reduced height */

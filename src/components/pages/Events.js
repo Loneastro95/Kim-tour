@@ -90,7 +90,7 @@ const Events = () => {
             </p>
 
           </Col>
-          <Col md={6} className="event-card checkout">
+          <Col md={6} className="event-card checkout mt-3">
             <div className="buy-ticket-container">
               <h3>Coming September</h3>
               <Button className="w-100">Buy Ticket</Button>

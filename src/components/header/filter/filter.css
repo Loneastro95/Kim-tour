@@ -20,6 +20,7 @@ button.active {
 /* General styles for the filter buttons */
 .filter-btn {
   display: flex;
+  gap: .25rem;
   flex-wrap: nowrap;
   overflow-x: auto;
   scrollbar-width: none; /* For Firefox */
