@@ -65,10 +65,10 @@ const Attractions = () => {
   //   };
 
   const handleButtonClick = () => {
-    const googleMapsUrl =  `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(item.location)}`;
+    const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(item.location)}`;
     window.open(googleMapsUrl, '_blank');
   };
-  const handlebackbtn = () =>{
+  const handlebackbtn = () => {
     navigate('/eventCard')
   }
 
@@ -76,19 +76,19 @@ const Attractions = () => {
     <div>
       <NavBar />
       <Container>
-      <h3 className="w-100"><FontAwesomeIcon onClick={handlebackbtn} icon={faArrowLeft} className="me-2"/>{item.name}</h3>
-      <Row className="imgContainer mb-4">
+        <h3 className="w-100"><FontAwesomeIcon onClick={handlebackbtn} icon={faArrowLeft} className="me-2 arrow" />{item.name}</h3>
+        <Row className="imgContainer mb-4">
           <Col md={8}>
-            <img className="img-fluid big" src={item.gallery[0] } alt="Big view" />
+            <img className="img-fluid big" src={item.gallery[0]} alt="Big view" />
           </Col>
           <Col md={4} className="smallContainer d-flex flex-column justify-content-between">
             <div className="smallImg d-flex">
-              <img className="img-fluid small" src={item.gallery[1] || kimImg } alt="Small view 1" />
-              <img className="img-fluid small" src={ item.gallery[2] || kimImg  } alt="Small view 2" />
+              <img className="img-fluid small" src={item.gallery[1] || kimImg} alt="Small view 1" />
+              <img className="img-fluid small" src={item.gallery[2] || kimImg} alt="Small view 2" />
             </div>
             <div className="smallImg d-flex">
-              <img className="img-fluid small" src={ item.gallery[3] || kimImg  } alt="Small view 3" />
-              <img className="img-fluid small" src={ item.gallery[4] || kimImg  } alt="Small view 4" />
+              <img className="img-fluid small" src={item.gallery[3] || kimImg} alt="Small view 3" />
+              <img className="img-fluid small" src={item.gallery[4] || kimImg} alt="Small view 4" />
             </div>
           </Col>
         </Row>
@@ -133,18 +133,16 @@ const Attractions = () => {
               </div>
             </div>
             <p className="event-content">
-            {item.description}
+              {item.description}
             </p>
           </Col>
-          <Col md={6} className="event-card checkout">
-            <div className="checkout-container  mb-6 p-3 bg-light shadow-sm rounded w-50">
-              <h4 className="date-for-price text-center">Get directions </h4>
+          <Col md={6} xs={12} className="event-card checkout">
+            <div className="checkout-container mb-6 p-3 bg-light shadow-sm rounded w-100">
+              <h4 className="date-for-price text-center">Get directions</h4>
               <Form className="w-100">
-                
-                  <Button className="showbtn" variant="outline-dark" onClick={handleButtonClick }>
-                   Directions
-                  </Button>
-                
+                <Button className="showbtn" variant="outline-dark" onClick={handleButtonClick}>
+                  Directions
+                </Button>
               </Form>
             </div>
           </Col>

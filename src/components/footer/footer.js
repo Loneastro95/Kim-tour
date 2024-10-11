@@ -22,25 +22,30 @@ const footer = () => {
             <Row className="footer-row w-100 pt-5">
                 <Col lg={3} xs={12}>
                   <h4>About Kim-tour</h4>
-                  <p>About us</p>
-                  <p>Press</p>
-                  <p>Terms of Service</p>
-                  <p>Trust & Safety</p>
-                  <p>Privacy</p>
-                  <p>Contact</p>
+                  <div className="foot-info">
+                    <p>About us</p>
+                    <p>Press</p>
+                    <p>Terms of Service</p>
+                    <p>Trust & Safety</p>
+                    <p>Privacy</p>
+                    <p>Contact</p>
+                  </div>
                 </Col>
                 <Col lg={3} xs={12}>
                   <h4>Explore</h4>
-                  <p>Write a review</p>
-                  <p>Travel Articles</p>
-                  <p>Add a Place</p>
-        
+                  <div className="foot-info">
+                    <p>Write a review</p>
+                    <p>Travel Articles</p>
+                    <p>Add a Place</p>
+                  </div>
                 </Col>
                 <Col lg={3} xs={12} >
                   <h4>Do Business With Us</h4>
-                  <p>Owners</p>
-                  <p>Business Advantage</p>
-                  <p>Advertise with Us</p>
+                  <div className="foot-info">
+                    <p>Owners</p>
+                    <p>Business Advantage</p>
+                    <p>Advertise with Us</p>
+                  </div>
                 </Col>
                 <Col lg={3} xs={12}>
                   <h4>Kim-Tour</h4>

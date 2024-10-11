@@ -39,6 +39,7 @@
 
 .Info-container {
   margin-top: 8px; /* Reduced from 20px */
+  width: 100%;
 }
 
 .details-container .rating-container {
@@ -110,6 +111,7 @@
 
   .small {
     height: 120px; /* Further reduced height */
+    display: none;
   }
 
   .imgContainer {

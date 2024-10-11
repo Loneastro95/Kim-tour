@@ -121,15 +121,15 @@ const Restaurant = () => {
               {item.description}
             </p>
           </Col>
-          <Col md={6} className="event-card">
-            <div className="checkout-container mb-6 p-3 bg-light shadow-sm rounded w-50">
+          <Col md={6} className="event-card  checkin-out">
+            <div className="checkout-container mb-6 p-3 bg-light shadow-sm rounded w-100 ">
               <h4 className="date-for-price">Come Dine with us</h4>
               <Form className="w-100">
                 <InputGroup className="checkin-out mb-3 ">
                   <DatePicker
                     selected={checkInDate}
                     onChange={handleDateChange}
-                    className="form-control"
+                    className="form-control w-100"
                     placeholderText="Check-In Date"
                     dateFormat="yyyy-MM-dd"
                     minDate={new Date()}

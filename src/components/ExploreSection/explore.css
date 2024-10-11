@@ -1,55 +1,68 @@
-.explore-container{
-    
-    
+.explore-container {
+  margin-top: 30px;
+  padding: 0 15px; /* Adds some padding for mobile screens */
 }
 
-.carousel-container{
-    width: 100%;
-    aspect-ratio: 1/.3;
-
+.carousel-container {
+  width: 100%;
+  aspect-ratio: 1 / 0.5; /* Adjust aspect ratio for desktop */
 }
 
-.explore-container img{
-    width: 100%;
-    aspect-ratio: 1/.4;
+.explore-container img {
+  width: 100%;
+  height: auto; /* Ensure images scale properly */
+  object-fit: cover; /* Keeps the image aspect ratio */
 }
-.explore-header{
-    font-weight: 800;
-    
+
+.explore-header {
+  font-weight: 800;
+  font-size: 1.8rem;
 }
-.explore-text{
-    background-color: black;
-    opacity: 60%;
-    color: whitesmoke;
-    width: 70%;
-    text-align: center;
-    margin-top: 0;
-    padding: 10px;
-    font-size: 1.1rem;
-    
+
+.explore-text {
+  background-color: black;
+  opacity: 0.6;
+  color: whitesmoke;
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 10px;
+  font-size: 1.1rem;
 }
 
 .carousel-caption {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center vertically */
-    align-items: center; /* Center horizontally */
-    text-align: center;
-    height: 100%; /* Ensure it takes full height of the carousel item */
-  }
-  
-  .explore-header {
-    font-size: 1.7rem; /* Adjust size as needed */
-    margin-bottom: 1rem; /* Space between header and text */
-  }
-  
-  .explore-text {
-    font-size: 1rem; /* Adjust size as needed */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center text */
+  align-items: center; /* Horizontally center text */
+  text-align: center;
+  height: 100%;
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+  .carousel-container {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Taller aspect ratio for mobile */
   }
 
-  @media (max-width: 768px) {
-    img{
-      width: 100%;
-      aspect-ratio: 1/.8;
+  .explore-container img {
+    aspect-ratio: 1 / 1; /* Adjust aspect ratio for mobile */
   }
+
+  .explore-header {
+    font-size: 1.3rem; /* Smaller font size for mobile */
   }
+
+  .explore-text {
+    font-size: 0.9rem; /* Smaller font size for mobile */
+    width: 90%; /* More room for text on mobile */
+    padding: 8px;
+  }
+
+  .carousel-caption {
+    padding: 0 10px; /* Add padding for better text readability on smaller screens */
+  }
+
+  .carousel-indicators{display: none;}
+}

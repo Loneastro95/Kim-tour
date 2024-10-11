@@ -10,3 +10,26 @@ p{
 h5{
     font-size: 13px;
 }
+
+@media (max-width: 768px) {
+
+    
+    .footer-container h4 {
+      text-align: center; /* Center align section titles on mobile */
+    }
+
+    .foot-info{
+        border-bottom: 2px solid gainsboro;
+        margin-bottom: .25rem;
+    }
+  
+    .footer-row {
+      text-align: center; /* Ensure better layout on mobile */
+    }
+  
+    h5 {
+      text-align: center;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  }
